@@ -69,37 +69,29 @@ struct GitaWidgetEntryView : View {
     }
 
     var body: some View {
-        ZStack {
-            // Paper texture background
-            Image("PaperTexture")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .clipped()
+        VStack(alignment: .leading, spacing: 0) {
+            // Quote text
+            Text(entry.quote.text)
+                .font(.custom("Montserrat-Medium", size: quoteFontSize))
+                .fontWeight(.medium)
+                .foregroundColor(.black)
+                .multilineTextAlignment(.leading)
+                .lineSpacing(4)
+                .lineLimit(nil)
+                .minimumScaleFactor(0.85)
             
-            VStack(alignment: .leading, spacing: 0) {
-                // Quote text
-                Text(entry.quote.text)
-                    .font(.custom("Montserrat-Medium", size: quoteFontSize))
-                    .fontWeight(.medium)
+            Spacer()
+            
+            // Source attribution
+            HStack {
+                Text("Chapter \(entry.quote.chapter) • Verse \(entry.quote.verse)")
+                    .font(.custom("Montserrat-Regular", size: sourceFontSize))
+                    .fontWeight(.regular)
                     .foregroundColor(.black)
-                    .multilineTextAlignment(.leading)
-                    .lineSpacing(4)
-                    .lineLimit(nil)
-                    .minimumScaleFactor(0.85)
-                
                 Spacer()
-                
-                // Source attribution
-                HStack {
-                    Text("Chapter \(entry.quote.chapter) • Verse \(entry.quote.verse)")
-                        .font(.custom("Montserrat-Regular", size: sourceFontSize))
-                        .fontWeight(.regular)
-                        .foregroundColor(.black)
-                    Spacer()
-                }
             }
-            .padding(padding)
         }
+        .padding(padding)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Bhagavad Gita quote: \(entry.quote.text). From Chapter \(entry.quote.chapter), Verse \(entry.quote.verse)")
     }
@@ -111,6 +103,11 @@ struct GitaWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             GitaWidgetEntryView(entry: entry)
+                .containerBackground(for: .widget) {
+                    Image("PaperTexture")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                }
         }
         .configurationDisplayName("Gita Wisdom")
         .description("Daily wisdom from the Bhagavad Gita")
