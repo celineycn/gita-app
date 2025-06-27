@@ -72,9 +72,9 @@ struct GitaWidgetEntryView : View {
         VStack(alignment: .leading, spacing: 0) {
             // Quote text
             Text(entry.quote.text)
-                .font(.custom("Montserrat-Medium", size: quoteFontSize))
-                .fontWeight(.medium)
-                .foregroundColor(.black)
+                .font(.custom("Montserrat-Bold", size: quoteFontSize))
+                .fontWeight(.bold)
+                .foregroundColor(.gray)
                 .multilineTextAlignment(.leading)
                 .lineSpacing(4)
                 .lineLimit(nil)
@@ -85,9 +85,9 @@ struct GitaWidgetEntryView : View {
             // Source attribution
             HStack {
                 Text("Chapter \(entry.quote.chapter) • Verse \(entry.quote.verse)")
-                    .font(.custom("Montserrat-Regular", size: sourceFontSize))
-                    .fontWeight(.regular)
-                    .foregroundColor(.black)
+                    .font(.custom("Montserrat-Bold", size: sourceFontSize))
+                    .fontWeight(.bold)
+                    .foregroundColor(.gray)
                 Spacer()
             }
         }
@@ -104,9 +104,13 @@ struct GitaWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             GitaWidgetEntryView(entry: entry)
                 .containerBackground(for: .widget) {
-                    Image("PaperTexture")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
+                    ZStack {
+                        Image("PaperTexture")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                        
+                        Color.white.opacity(0.3)
+                    }
                 }
         }
         .configurationDisplayName("Gita Wisdom")
