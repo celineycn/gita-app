@@ -45,27 +45,27 @@ struct GitaWidgetEntryView : View {
     private var quoteFontSize: CGFloat {
         switch family {
         case .systemSmall:
-            return 13
+            return 15
         case .systemMedium:
-            return 16
-        default:
             return 18
+        default:
+            return 20
         }
     }
     
     private var sourceFontSize: CGFloat {
         switch family {
         case .systemSmall:
-            return 10
-        case .systemMedium:
             return 12
+        case .systemMedium:
+            return 14
         default:
-            return 13
+            return 15
         }
     }
     
     private var padding: CGFloat {
-        family == .systemSmall ? 16 : 20
+        family == .systemSmall ? 8 : 12
     }
 
     var body: some View {
