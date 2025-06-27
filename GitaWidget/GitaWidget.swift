@@ -74,7 +74,7 @@ struct GitaWidgetEntryView : View {
             Text(entry.quote.text)
                 .font(.custom("Montserrat-Bold", size: quoteFontSize))
                 .fontWeight(.bold)
-                .foregroundColor(.gray)
+                .foregroundColor(.black)
                 .multilineTextAlignment(.leading)
                 .lineSpacing(4)
                 .lineLimit(nil)
@@ -87,7 +87,7 @@ struct GitaWidgetEntryView : View {
                 Text("Chapter \(entry.quote.chapter) • Verse \(entry.quote.verse)")
                     .font(.custom("Montserrat-Bold", size: sourceFontSize))
                     .fontWeight(.bold)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.black)
                 Spacer()
             }
         }
@@ -109,7 +109,7 @@ struct GitaWidget: Widget {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                         
-                        Color.white.opacity(0.3)
+                        Color.white.opacity(0.7)
                     }
                 }
         }
