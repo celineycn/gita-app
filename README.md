@@ -11,7 +11,7 @@ The app features a home screen widget that displays random quotes from the Bhaga
 - **Widget Support**: Available in both small and medium sizes
 - **Auto-refresh**: New quotes appear hourly without any interaction needed
 - **Authentic Content**: 10 carefully selected verses from the Bhagavad Gita
-- **Clean Design**: Minimalist interface that fits well with any home screen setup
+- **Sacred Manuscript Design**: Beautiful paper texture background with elegant typography that evokes reading ancient wisdom
 - **Accessibility**: Full VoiceOver support for screen readers
 
 ## Technical Details

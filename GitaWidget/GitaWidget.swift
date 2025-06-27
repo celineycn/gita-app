@@ -41,29 +41,67 @@ struct SimpleEntry: TimelineEntry {
 struct GitaWidgetEntryView : View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var family
+    
+    private var quoteFontSize: CGFloat {
+        switch family {
+        case .systemSmall:
+            return 13
+        case .systemMedium:
+            return 16
+        default:
+            return 18
+        }
+    }
+    
+    private var sourceFontSize: CGFloat {
+        switch family {
+        case .systemSmall:
+            return 10
+        case .systemMedium:
+            return 12
+        default:
+            return 13
+        }
+    }
+    
+    private var padding: CGFloat {
+        family == .systemSmall ? 16 : 20
+    }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: family == .systemSmall ? 8 : 12) {
-            Text(entry.quote.text)
-                .font(.system(size: family == .systemSmall ? 12 : 14, weight: .medium))
-                .foregroundColor(.primary)
-                .multilineTextAlignment(.leading)
-                .lineLimit(nil)
-                .minimumScaleFactor(0.8)
+        ZStack {
+            // Paper texture background
+            Image("PaperTexture")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .clipped()
             
-            Spacer()
-            
-            HStack {
+            VStack(alignment: .leading, spacing: 0) {
+                // Quote text
+                Text(entry.quote.text)
+                    .font(.custom("Montserrat-Medium", size: quoteFontSize))
+                    .fontWeight(.medium)
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
+                    .lineSpacing(4)
+                    .lineLimit(nil)
+                    .minimumScaleFactor(0.85)
+                
                 Spacer()
-                Text("— " + entry.quote.attribution)
-                    .font(.system(size: family == .systemSmall ? 10 : 12, weight: .regular))
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.trailing)
+                
+                // Source attribution
+                HStack {
+                    Text("Chapter \(entry.quote.chapter) • Verse \(entry.quote.verse)")
+                        .font(.custom("Montserrat-Regular", size: sourceFontSize))
+                        .fontWeight(.regular)
+                        .foregroundColor(.black)
+                    Spacer()
+                }
             }
+            .padding(padding)
         }
-        .padding(family == .systemSmall ? 12 : 16)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Bhagavad Gita quote: \(entry.quote.text). From \(entry.quote.attribution)")
+        .accessibilityLabel("Bhagavad Gita quote: \(entry.quote.text). From Chapter \(entry.quote.chapter), Verse \(entry.quote.verse)")
     }
 }
 
@@ -73,7 +111,6 @@ struct GitaWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             GitaWidgetEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("Gita Wisdom")
         .description("Daily wisdom from the Bhagavad Gita")
@@ -84,8 +121,8 @@ struct GitaWidget: Widget {
 #Preview(as: .systemSmall) {
     GitaWidget()
 } timeline: {
-    SimpleEntry(date: .now, quote: Quote(text: "You have the right to perform your prescribed duty, but you are not entitled to the fruits of action.", chapter: 2, verse: 47))
-    SimpleEntry(date: .now, quote: Quote(text: "As a person puts on new garments, giving up old ones, the soul similarly accepts new material bodies.", chapter: 2, verse: 22))
+    SimpleEntry(date: .now, quote: Quote(text: "Be steadfast in yoga, O Arjuna.", chapter: 2, verse: 48))
+    SimpleEntry(date: .now, quote: Quote(text: "The mind is restless, turbulent, obstinate and very strong.", chapter: 6, verse: 34))
 }
 
 #Preview(as: .systemMedium) {
