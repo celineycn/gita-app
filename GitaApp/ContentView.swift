@@ -8,14 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var quotes = QuoteService.shared.getAllQuotes()
+    @State private var selectedQuote: Quote?
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            List(quotes) { quote in
+                QuoteRow(quote: quote) {
+                    selectedQuote = quote
+                }
+            }
+            .navigationTitle("Bhagavad Gita")
         }
-        .padding()
+        .sheet(item: $selectedQuote) { quote in
+            QuoteDetailView(quote: quote)
+        }
+    }
+}
+
+struct QuoteRow: View {
+    let quote: Quote
+    let onTap: () -> Void
+    
+    var body: some View {
+        Button(action: onTap) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(quote.text)
+                    .font(.body)
+                    .foregroundColor(.primary)
+                    .multilineTextAlignment(.leading)
+                
+                Text(quote.attribution)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.vertical, 4)
+        }
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
