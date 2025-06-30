@@ -21,6 +21,19 @@ struct Quote: Codable, Identifiable {
     }
     
     var attribution: String {
-        "Chapter \(chapter), Verse \(verse)"
+        return ""
+    }
+    
+    var categoryName: String {
+        switch chapter {
+        case 1:
+            return "一针见血型"
+        case 2:
+            return "扎心现实型"
+        case 3:
+            return "行动指令型"
+        default:
+            return "减肥语录"
+        }
     }
 }

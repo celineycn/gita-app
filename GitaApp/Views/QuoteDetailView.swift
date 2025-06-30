@@ -48,17 +48,12 @@ struct QuoteDetailView: View {
                         // Quote content
                         VStack(spacing: 24) {
                             Text(quote.text)
-                                .font(.custom("Montserrat-Bold", size: 16))
+                                .font(.custom("TBMCYXT", size: 16))
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                                 .lineSpacing(2)
                                 .padding(.horizontal, 24)
-                            
-                            Text(quote.attribution)
-                                .font(.custom("Montserrat-Bold", size: 12))
-                                .fontWeight(.medium)
-                                .foregroundColor(.black.opacity(0.6))
                         }
                         .padding(.vertical, 32)
                         .padding(.horizontal, 20)
@@ -80,5 +75,5 @@ struct QuoteDetailView: View {
 }
 
 #Preview {
-    QuoteDetailView(quote: Quote(text: "You have the right to perform your prescribed duty, but you are not entitled to the fruits of action. Never consider yourself to be the cause of the results of your activities, and never be attached to not doing your duty.", chapter: 2, verse: 47))
+    QuoteDetailView(quote: Quote(text: "别吃了，你又不饿，只是馋。", chapter: 1, verse: 1))
 }

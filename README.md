@@ -1,42 +1,56 @@
-# Gita App
+# 减肥语录 App
 
-A simple iOS app that brings daily wisdom from the Bhagavad Gita right to your home screen through an elegant widget.
+一个专为女生设计的 iOS 减肥励志应用，通过主屏幕小组件提供"刻薄"但有效的减肥语录，帮助你坚持瘦身目标。
 
-## What it does
+## 功能介绍
 
-The app features a home screen widget that displays random quotes from the Bhagavad Gita, automatically refreshing every hour to give you fresh inspiration throughout the day. Each quote includes its chapter and verse reference, so you can explore further if something resonates with you.
+这个应用的核心是一个主屏幕小组件，会显示精心挑选的减肥励志语录。小组件每小时自动刷新，为你带来新的动力。每条语录都经过精心分类，专治各种想放弃的懒癌和馋嘴。
 
-## Features
+## 主要特色
 
-- **Widget Support**: Available in both small and medium sizes
-- **Auto-refresh**: New quotes appear hourly without any interaction needed
-- **Authentic Content**: 10 carefully selected verses from the Bhagavad Gita
-- **Sacred Manuscript Design**: Beautiful paper texture background with elegant typography that evokes reading ancient wisdom
-- **Accessibility**: Full VoiceOver support for screen readers
+- **小组件支持**: 提供小尺寸和中尺寸两种样式
+- **自动刷新**: 每小时自动更新语录，无需手动操作
+- **三大分类**: 
+  - **一针见血型**: 直击要害，点破借口
+  - **扎心现实型**: 现实提醒，激发斗志
+  - **行动指令型**: 明确指导，立即行动
+- **优雅设计**: 采用纸质纹理背景和精美排版
+- **无障碍支持**: 完整的 VoiceOver 屏幕阅读器支持
 
-## Technical Details
+## 技术详情
 
-Built with SwiftUI and WidgetKit for iOS 18.2+. The app uses a timeline provider to manage quote rotation and ensures the widget stays updated even when the main app isn't running.
+使用 SwiftUI 和 WidgetKit 构建，适配 iOS 18.2+。应用使用时间线提供者管理语录轮换，确保小组件即使在主应用未运行时也能保持更新。
 
-The quotes are stored locally, so no internet connection is required for the widget to function.
+所有语录都存储在本地，无需网络连接即可正常工作。
 
-## Installation
+## 安装说明
 
-1. Clone this repository
-2. Open `GitaApp.xcodeproj` in Xcode
-3. Build and run on your iOS device or simulator
-4. Add the widget to your home screen by long-pressing an empty area and selecting the Gita Wisdom widget
+1. 克隆此仓库
+2. 在 Xcode 中打开 `GitaApp.xcodeproj`
+3. 在 iOS 设备或模拟器上构建并运行
+4. 长按主屏幕空白区域，选择"减肥语录"小组件添加到主屏幕
 
-## Widget Sizes
+## 小组件尺寸
 
-- **Small**: Perfect for a single quote with minimal space usage
-- **Medium**: Larger text and more breathing room for longer verses
+- **小尺寸**: 完美适配单条语录，占用空间最小
+- **中尺寸**: 更大字体和更多呼吸空间，适合较长的语录
 
-## Requirements
+## 系统要求
 
-- iOS 18.2 or later
-- Xcode 16.2 or later for development
+- iOS 18.2 或更高版本
+- 开发需要 Xcode 16.2 或更高版本
 
-## Contributing
+## 语录分类
 
-Feel free to suggest additional verses or improvements to the design. The app is intentionally kept simple to maintain focus on the wisdom being shared.
+### 一针见血型
+直击要害的犀利语录，专门戳破各种减肥借口。
+
+### 扎心现实型  
+现实而残酷的提醒，让你正视当前状态，激发改变的决心。
+
+### 行动指令型
+简洁明了的行动指导，告诉你具体该怎么做。
+
+## 贡献
+
+欢迎提供更多有效的减肥语录或改进建议。应用保持简洁设计，专注于提供有效的减肥动力。

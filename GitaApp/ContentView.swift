@@ -18,7 +18,7 @@ struct ContentView: View {
                     selectedQuote = quote
                 }
             }
-            .navigationTitle("Bhagavad Gita")
+            .navigationTitle("减肥语录")
         }
         .sheet(item: $selectedQuote) { quote in
             QuoteDetailView(quote: quote)
@@ -37,10 +37,6 @@ struct QuoteRow: View {
                     .font(.body)
                     .foregroundColor(.primary)
                     .multilineTextAlignment(.leading)
-                
-                Text(quote.attribution)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
             }
             .padding(.vertical, 4)
         }

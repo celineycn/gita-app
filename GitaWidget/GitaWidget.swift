@@ -45,11 +45,11 @@ struct GitaWidgetEntryView : View {
     private var quoteFontSize: CGFloat {
         switch family {
         case .systemSmall:
-            return 15
-        case .systemMedium:
             return 18
+        case .systemMedium:
+            return 22
         default:
-            return 20
+            return 24
         }
     }
     
@@ -65,35 +65,26 @@ struct GitaWidgetEntryView : View {
     }
     
     private var padding: CGFloat {
-        family == .systemSmall ? 8 : 12
+        family == .systemSmall ? 12 : 16
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             // Quote text
             Text(entry.quote.text)
-                .font(.custom("Montserrat-Bold", size: quoteFontSize))
-                .fontWeight(.bold)
-                .foregroundColor(.black)
+                .font(.custom("TBMCYXT", size: quoteFontSize))
+                .fontWeight(.heavy)
+                .foregroundColor(.white)
                 .multilineTextAlignment(.leading)
                 .lineSpacing(4)
                 .lineLimit(nil)
                 .minimumScaleFactor(0.85)
             
             Spacer()
-            
-            // Source attribution
-            HStack {
-                Text("Chapter \(entry.quote.chapter) • Verse \(entry.quote.verse)")
-                    .font(.custom("Montserrat-Bold", size: sourceFontSize))
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                Spacer()
-            }
         }
         .padding(padding)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Bhagavad Gita quote: \(entry.quote.text). From Chapter \(entry.quote.chapter), Verse \(entry.quote.verse)")
+        .accessibilityLabel("减肥励志语录: \(entry.quote.text)")
     }
 }
 
@@ -104,17 +95,18 @@ struct GitaWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             GitaWidgetEntryView(entry: entry)
                 .containerBackground(for: .widget) {
-                    ZStack {
-                        Image("PaperTexture")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                        
-                        Color.white.opacity(0.7)
-                    }
+                    LinearGradient(
+                        gradient: Gradient(colors: [
+                            Color(red: 0.7, green: 0.4, blue: 0.5),
+                            Color(red: 0.6, green: 0.3, blue: 0.4)
+                        ]),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
                 }
         }
-        .configurationDisplayName("Gita Wisdom")
-        .description("Daily wisdom from the Bhagavad Gita")
+        .configurationDisplayName("减肥语录")
+        .description("每日减肥励志语录，助你坚持瘦身目标")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
@@ -122,13 +114,13 @@ struct GitaWidget: Widget {
 #Preview(as: .systemSmall) {
     GitaWidget()
 } timeline: {
-    SimpleEntry(date: .now, quote: Quote(text: "Be steadfast in yoga, O Arjuna.", chapter: 2, verse: 48))
-    SimpleEntry(date: .now, quote: Quote(text: "The mind is restless, turbulent, obstinate and very strong.", chapter: 6, verse: 34))
+    SimpleEntry(date: .now, quote: Quote(text: "别吃了，你又不饿，只是馋。", chapter: 1, verse: 1))
+    SimpleEntry(date: .now, quote: Quote(text: "流汗是脂肪在哭泣，别让它停。", chapter: 3, verse: 3))
 }
 
 #Preview(as: .systemMedium) {
     GitaWidget()
 } timeline: {
-    SimpleEntry(date: .now, quote: Quote(text: "You have the right to perform your prescribed duty, but you are not entitled to the fruits of action.", chapter: 2, verse: 47))
-    SimpleEntry(date: .now, quote: Quote(text: "For the soul there is neither birth nor death. It is not slain when the body is slain.", chapter: 2, verse: 20))
+    SimpleEntry(date: .now, quote: Quote(text: "好看的衣服都在等瘦子穿呢，你穿啥？", chapter: 2, verse: 1))
+    SimpleEntry(date: .now, quote: Quote(text: "比你瘦的人还在努力，你凭什么歇着？", chapter: 3, verse: 2))
 }
