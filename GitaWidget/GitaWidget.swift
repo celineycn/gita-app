@@ -23,6 +23,7 @@ struct Provider: TimelineProvider {
 
         let currentDate = Date()
         // 每5分钟更新一次，创建12个entries（1小时）
+        // 根据当前选择的模式获取语录
         for minuteOffset in stride(from: 0, to: 60, by: 5) {
             let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, quote: QuoteService.shared.getRandomQuote())
@@ -93,7 +94,7 @@ struct GitaWidgetEntryView : View {
                 .fill(.thickMaterial)
         }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("减肥励志语录: \(entry.quote.text)")
+        .accessibilityLabel("\(entry.quote.mode.displayName)语录: \(entry.quote.text)")
     }
 }
 
@@ -104,8 +105,8 @@ struct GitaWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             GitaWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("减肥语录")
-        .description("每日减肥励志语录，助你坚持瘦身目标")
+        .configurationDisplayName("励志语录")
+        .description("根据你选择的模式显示对应的励志语录")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
@@ -113,13 +114,13 @@ struct GitaWidget: Widget {
 #Preview(as: .systemSmall) {
     GitaWidget()
 } timeline: {
-    SimpleEntry(date: .now, quote: Quote(text: "别吃了，你又不饿，只是馋。", chapter: 1, verse: 1))
-    SimpleEntry(date: .now, quote: Quote(text: "流汗是脂肪在哭泣，别让它停。", chapter: 3, verse: 3))
+    SimpleEntry(date: .now, quote: Quote(text: "别吃了，你不饿，只是馋。", mode: .weightLoss, number: 24))
+    SimpleEntry(date: .now, quote: Quote(text: "想要的太贵，不靠幻想买单。", mode: .makeMoney, number: 1))
 }
 
 #Preview(as: .systemMedium) {
     GitaWidget()
 } timeline: {
-    SimpleEntry(date: .now, quote: Quote(text: "好看的衣服都在等瘦子穿呢，你穿啥？", chapter: 2, verse: 1))
-    SimpleEntry(date: .now, quote: Quote(text: "比你瘦的人还在努力，你凭什么歇着？", chapter: 3, verse: 2))
+    SimpleEntry(date: .now, quote: Quote(text: "明明可以上岸，却在刷短剧。", mode: .getAshore, number: 1))
+    SimpleEntry(date: .now, quote: Quote(text: "结果比你想象中更好。", mode: .goodLuck, number: 1))
 }

@@ -6,34 +6,86 @@
 //
 
 import Foundation
+import WidgetKit
+
+enum Mode: String, CaseIterable, Codable {
+    case weightLoss = "我要减肥"
+    case getAshore = "我要上岸"
+    case makeMoney = "我要搞钱"
+    case goodLuck = "我要好运"
+    
+    var displayName: String {
+        return self.rawValue
+    }
+    
+    var emoji: String {
+        switch self {
+        case .weightLoss:
+            return "💪"
+        case .getAshore:
+            return "📚"
+        case .makeMoney:
+            return "💰"
+        case .goodLuck:
+            return "🍀"
+        }
+    }
+}
 
 struct Quote: Codable, Identifiable {
     let id: UUID
     let text: String
-    let chapter: Int
-    let verse: Int
+    let mode: Mode
+    let number: Int
     
-    init(text: String, chapter: Int, verse: Int) {
+    init(text: String, mode: Mode, number: Int) {
         self.id = UUID()
         self.text = text
-        self.chapter = chapter
-        self.verse = verse
+        self.mode = mode
+        self.number = number
     }
     
     var attribution: String {
-        return ""
+        return "\(mode.displayName) #\(number)"
     }
     
     var categoryName: String {
-        switch chapter {
-        case 1:
-            return "一针见血型"
-        case 2:
-            return "扎心现实型"
-        case 3:
-            return "行动指令型"
-        default:
-            return "减肥语录"
+        return mode.displayName
+    }
+}
+
+class SettingsManager: ObservableObject {
+    static let shared = SettingsManager()
+    
+    // 使用App Group共享的UserDefaults
+    private let sharedDefaults = UserDefaults(suiteName: "group.com.gita.app") ?? UserDefaults.standard
+    
+    @Published var selectedMode: Mode {
+        didSet {
+            sharedDefaults.set(selectedMode.rawValue, forKey: "selectedMode")
+            sharedDefaults.synchronize()
+            reloadAllWidgets()
         }
+    }
+    
+    private init() {
+        let savedMode = sharedDefaults.string(forKey: "selectedMode") ?? Mode.weightLoss.rawValue
+        self.selectedMode = Mode(rawValue: savedMode) ?? .weightLoss
+    }
+    
+    private func reloadAllWidgets() {
+        DispatchQueue.main.async {
+            #if !WIDGET_EXTENSION
+            if #available(iOS 14.0, *) {
+                WidgetCenter.shared.reloadAllTimelines()
+            }
+            #endif
+        }
+    }
+    
+    // Widget中读取最新的模式设置
+    func getCurrentMode() -> Mode {
+        let savedMode = sharedDefaults.string(forKey: "selectedMode") ?? Mode.weightLoss.rawValue
+        return Mode(rawValue: savedMode) ?? .weightLoss
     }
 }

@@ -75,5 +75,5 @@ struct QuoteDetailView: View {
 }
 
 #Preview {
-    QuoteDetailView(quote: Quote(text: "别吃了，你又不饿，只是馋。", chapter: 1, verse: 1))
+    QuoteDetailView(quote: Quote(text: "别吃了，你又不饿，只是馋。", mode: .weightLoss, number: 24))
 }
