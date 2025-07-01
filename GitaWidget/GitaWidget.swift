@@ -22,8 +22,9 @@ struct Provider: TimelineProvider {
         var entries: [SimpleEntry] = []
 
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+        // 每5分钟更新一次，创建12个entries（1小时）
+        for minuteOffset in stride(from: 0, to: 60, by: 5) {
+            let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, quote: QuoteService.shared.getRandomQuote())
             entries.append(entry)
         }
@@ -67,6 +68,9 @@ struct GitaWidgetEntryView : View {
     private var padding: CGFloat {
         family == .systemSmall ? 12 : 16
     }
+    
+    // 文字颜色 - 使用 primary 自适应系统主题和背景
+    private var textColor: Color { .primary }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -74,7 +78,7 @@ struct GitaWidgetEntryView : View {
             Text(entry.quote.text)
                 .font(.custom("TBMCYXT", size: quoteFontSize))
                 .fontWeight(.heavy)
-                .foregroundColor(.white)
+                .foregroundColor(textColor)
                 .multilineTextAlignment(.leading)
                 .lineSpacing(4)
                 .lineLimit(nil)
@@ -83,6 +87,11 @@ struct GitaWidgetEntryView : View {
             Spacer()
         }
         .padding(padding)
+        .containerBackground(for: .widget) {
+            // 使用厚重材质，获得类似电池widget的白色毛玻璃效果
+            Rectangle()
+                .fill(.thickMaterial)
+        }
         .accessibilityElement(children: .combine)
         .accessibilityLabel("减肥励志语录: \(entry.quote.text)")
     }
@@ -94,16 +103,6 @@ struct GitaWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             GitaWidgetEntryView(entry: entry)
-                .containerBackground(for: .widget) {
-                    LinearGradient(
-                        gradient: Gradient(colors: [
-                            Color(red: 0.7, green: 0.4, blue: 0.5),
-                            Color(red: 0.6, green: 0.3, blue: 0.4)
-                        ]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                }
         }
         .configurationDisplayName("减肥语录")
         .description("每日减肥励志语录，助你坚持瘦身目标")
