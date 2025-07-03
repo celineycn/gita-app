@@ -234,22 +234,22 @@ struct GitaWidgetEntryView : View {
         let monthText = Text("\(month)")
             .font(.system(size: dateFontSize))
             .fontWeight(.bold)
-            .foregroundColor(.black)
+            .foregroundColor(.primary) // 改为自适应颜色
         
         let monthUnit = Text("月")
             .font(.system(size: dateFontSize))
             .fontWeight(.bold)
-            .foregroundColor(.black)
+            .foregroundColor(.primary) // 改为自适应颜色
         
         let dayText = Text("\(day)")
             .font(.system(size: dateFontSize))
             .fontWeight(.bold)
-            .foregroundColor(.black)
+            .foregroundColor(.primary) // 改为自适应颜色
         
         let dayUnit = Text("日")
             .font(.system(size: dateFontSize))
             .fontWeight(.bold)
-            .foregroundColor(.black)
+            .foregroundColor(.primary) // 改为自适应颜色
         
         return monthText + monthUnit + dayText + dayUnit
     }
