@@ -539,7 +539,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitaApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "马马列列";
+				INFOPLIST_KEY_CFBundleDisplayName = "嘴替";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -571,7 +571,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitaApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "马马列列";
+				INFOPLIST_KEY_CFBundleDisplayName = "嘴替";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -673,7 +673,7 @@
 				DEVELOPMENT_TEAM = UFYC6H55LZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitaWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "马马列列";
+				INFOPLIST_KEY_CFBundleDisplayName = "嘴替";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -701,7 +701,7 @@
 				DEVELOPMENT_TEAM = UFYC6H55LZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitaWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "马马列列";
+				INFOPLIST_KEY_CFBundleDisplayName = "嘴替";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
