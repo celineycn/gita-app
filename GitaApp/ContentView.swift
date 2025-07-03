@@ -142,6 +142,42 @@ struct QuoteRow: View {
     let quote: Quote
     let onTap: () -> Void
     
+    // 普通文字字号
+    private let normalFontSize: CGFloat = 16
+    
+    // 重要信息字号
+    private let importantFontSize: CGFloat = 18
+    
+    // 重要信息颜色 - 根据模式选择不同颜色
+    private var importantTextColor: Color {
+        switch quote.mode {
+        case .weightLoss:
+            return .orange
+        case .getAshore:
+            return .blue
+        case .makeMoney:
+            return .green
+        case .goodLuck:
+            return .purple
+        }
+    }
+    
+    // 构建富文本
+    private var styledText: Text {
+        var combinedText = Text("")
+        
+        for segment in quote.segments {
+            let segmentText = Text(segment.text)
+                .font(.system(size: segment.isImportant ? importantFontSize : normalFontSize))
+                .fontWeight(segment.isImportant ? .bold : .regular)
+                .foregroundColor(segment.isImportant ? importantTextColor : .primary)
+            
+            combinedText = combinedText + segmentText
+        }
+        
+        return combinedText
+    }
+    
     var body: some View {
         Button(action: onTap) {
             VStack(alignment: .leading, spacing: 8) {
@@ -161,9 +197,7 @@ struct QuoteRow: View {
                         .font(.caption)
                 }
                 
-                Text(quote.text)
-                    .font(.body)
-                    .foregroundColor(.primary)
+                styledText
                     .multilineTextAlignment(.leading)
                     .lineLimit(nil)
             }

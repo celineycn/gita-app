@@ -31,17 +31,31 @@ enum Mode: String, CaseIterable, Codable {
     }
 }
 
+// 文本片段结构，用于区分重要和普通文本
+struct TextSegment: Codable {
+    let text: String
+    let isImportant: Bool
+    
+    init(text: String, isImportant: Bool = false) {
+        self.text = text
+        self.isImportant = isImportant
+    }
+}
+
 struct Quote: Codable, Identifiable {
     let id: UUID
     let text: String
     let mode: Mode
     let number: Int
+    let segments: [TextSegment] // 新增：文本片段数组，用于标识重要信息
     
-    init(text: String, mode: Mode, number: Int) {
+    init(text: String, mode: Mode, number: Int, segments: [TextSegment] = []) {
         self.id = UUID()
         self.text = text
         self.mode = mode
         self.number = number
+        // 如果没有提供segments，将整个文本作为普通文本
+        self.segments = segments.isEmpty ? [TextSegment(text: text, isImportant: false)] : segments
     }
     
     var attribution: String {

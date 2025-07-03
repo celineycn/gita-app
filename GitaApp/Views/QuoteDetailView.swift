@@ -11,6 +11,42 @@ struct QuoteDetailView: View {
     let quote: Quote
     @Environment(\.dismiss) private var dismiss
     
+    // 普通文字字号
+    private let normalFontSize: CGFloat = 16
+    
+    // 重要信息字号
+    private let importantFontSize: CGFloat = 20
+    
+    // 重要信息颜色 - 根据模式选择不同颜色
+    private var importantTextColor: Color {
+        switch quote.mode {
+        case .weightLoss:
+            return .orange
+        case .getAshore:
+            return .blue
+        case .makeMoney:
+            return .green
+        case .goodLuck:
+            return .purple
+        }
+    }
+    
+    // 构建富文本
+    private var styledText: Text {
+        var combinedText = Text("")
+        
+        for segment in quote.segments {
+            let segmentText = Text(segment.text)
+                .font(.custom("TBMCYXT", size: segment.isImportant ? importantFontSize : normalFontSize))
+                .fontWeight(segment.isImportant ? .black : .bold)
+                .foregroundColor(segment.isImportant ? importantTextColor : .black)
+            
+            combinedText = combinedText + segmentText
+        }
+        
+        return combinedText
+    }
+    
     var body: some View {
         ZStack {
             Color.clear
@@ -45,12 +81,9 @@ struct QuoteDetailView: View {
                         // Semi-transparent overlay
                         Color.white.opacity(0.92)
                         
-                        // Quote content
+                        // Quote content with styled text
                         VStack(spacing: 24) {
-                            Text(quote.text)
-                                .font(.custom("TBMCYXT", size: 16))
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
+                            styledText
                                 .multilineTextAlignment(.center)
                                 .lineSpacing(2)
                                 .padding(.horizontal, 24)

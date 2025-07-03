@@ -11,253 +11,510 @@ class QuoteService {
     static let shared = QuoteService()
     
     private let quotes: [Quote] = [
-        // 我要减肥 (60条)
-        Quote(text: "去年拍的照片，脸小得不像你。", mode: .weightLoss, number: 1),
-        Quote(text: "你戒的从来不是奶茶，是自律。", mode: .weightLoss, number: 2),
-        Quote(text: "想瘦这件事，你说过很多遍了。", mode: .weightLoss, number: 3),
-        Quote(text: "那条裤子不是缩水，是你膨胀。", mode: .weightLoss, number: 4),
-        Quote(text: "那天发誓要瘦，现在胖得更稳。", mode: .weightLoss, number: 5),
-        Quote(text: "减肥，是重新掌控自己的人生。", mode: .weightLoss, number: 6),
-        Quote(text: "想吃就吃，是你最大的不自由。", mode: .weightLoss, number: 7),
-        Quote(text: "胖不是问题，是你不解决问题。", mode: .weightLoss, number: 8),
-        Quote(text: "长得不差，输在太爱吃。", mode: .weightLoss, number: 9),
-        Quote(text: "好看的脸，不该躲在双下巴后。", mode: .weightLoss, number: 10),
-        Quote(text: "瘦下来会更美，不是更好看，是更自信。", mode: .weightLoss, number: 11),
-        Quote(text: "明明可以靠脸，非要靠修图。", mode: .weightLoss, number: 12),
-        Quote(text: "奶茶三分糖，体脂百分百。", mode: .weightLoss, number: 13),
-        Quote(text: "镜子里的你，还在等你心动。", mode: .weightLoss, number: 14),
-        Quote(text: "美貌与自律，不是对立关系。", mode: .weightLoss, number: 15),
-        Quote(text: "\"明天开始\"是体重的保护神。", mode: .weightLoss, number: 16),
-        Quote(text: "热量不会因为你后悔就退货。", mode: .weightLoss, number: 17),
-        Quote(text: "你还记得你上次瘦的时候吗？", mode: .weightLoss, number: 18),
-        Quote(text: "你在焦虑胖的同时，吃得真香。", mode: .weightLoss, number: 19),
-        Quote(text: "减肥路上，你太容易放过自己。", mode: .weightLoss, number: 20),
-        Quote(text: "脂肪最怕的，是你动真格。", mode: .weightLoss, number: 21),
-        Quote(text: "有些衣服你不是不喜欢，是穿不进去。", mode: .weightLoss, number: 22),
-        Quote(text: "爱吃不是错，不动才是。", mode: .weightLoss, number: 23),
-        Quote(text: "别吃了，你不饿，只是馋。", mode: .weightLoss, number: 24),
-        Quote(text: "每次不自律，都是向懒惰低头。", mode: .weightLoss, number: 25),
-        Quote(text: "去年买的S码，是在等你，还是在嘲笑你？", mode: .weightLoss, number: 26),
-        Quote(text: "你的情敌正在瘦，你的前任在偷笑。", mode: .weightLoss, number: 27),
-        Quote(text: "嘴上享受一时，腰上肥肉一世。选一个。", mode: .weightLoss, number: 28),
-        Quote(text: "比你努力的人还在努力。", mode: .weightLoss, number: 29),
-        Quote(text: "流汗是脂肪在哭泣，别让它停。", mode: .weightLoss, number: 30),
-        Quote(text: "闭嘴，迈腿。就这么简单。", mode: .weightLoss, number: 31),
-        Quote(text: "那杯奶茶，值一个马甲线吗？", mode: .weightLoss, number: 32),
-        Quote(text: "你说\"明天开始\"是几月几号？", mode: .weightLoss, number: 33),
-        Quote(text: "自律这么贵，你还要欠着吗？", mode: .weightLoss, number: 34),
-        Quote(text: "吃到撑，不是对身体的嘉奖。", mode: .weightLoss, number: 35),
-        Quote(text: "每天多走1000步，难吗？", mode: .weightLoss, number: 36),
-        Quote(text: "那个收藏了的减脂食谱，用过吗？", mode: .weightLoss, number: 37),
-        Quote(text: "运动鞋落灰，是不是在等你？", mode: .weightLoss, number: 38),
-        Quote(text: "你不饿，是无聊，不是胃空。", mode: .weightLoss, number: 39),
-        Quote(text: "体重是身体的情绪回音。", mode: .weightLoss, number: 40),
-        Quote(text: "自律不是苦，是还没习惯。", mode: .weightLoss, number: 41),
-        Quote(text: "那不只是放纵，是自我放弃。", mode: .weightLoss, number: 42),
-        Quote(text: "你不是瘦不下来，是还没开始真的做。", mode: .weightLoss, number: 43),
-        Quote(text: "不是没动力，是太会找理由。", mode: .weightLoss, number: 44),
-        Quote(text: "你要的不是瘦，是自由感。", mode: .weightLoss, number: 45),
-        Quote(text: "好身材不是标准，是选择。", mode: .weightLoss, number: 46),
-        Quote(text: "自律一点，未来的自己会感谢你。", mode: .weightLoss, number: 47),
-        Quote(text: "每一步自律，都是自爱。", mode: .weightLoss, number: 48),
-        Quote(text: "活得更轻盈，才配你的野心。", mode: .weightLoss, number: 49),
-        Quote(text: "吃得对，是尊重自己。", mode: .weightLoss, number: 50),
-        Quote(text: "重点不是变瘦，是回到最舒服的你。", mode: .weightLoss, number: 51),
-        Quote(text: "每一次坚持，都是你好好爱自己。", mode: .weightLoss, number: 52),
-        Quote(text: "目标不是体重，是状态。", mode: .weightLoss, number: 53),
-        Quote(text: "控制饮食，不代表控制不住人生。", mode: .weightLoss, number: 54),
-        Quote(text: "拒绝不健康的诱惑，是对自己负责。", mode: .weightLoss, number: 55),
-        Quote(text: "你不是胖，是还没认真瘦。", mode: .weightLoss, number: 56),
-        Quote(text: "好看是天赋，维持才是本事。", mode: .weightLoss, number: 57),
-        Quote(text: "你瘦下来，不止是好看那么简单。", mode: .weightLoss, number: 58),
-        Quote(text: "明明是S码命，却过着XXL的生活。", mode: .weightLoss, number: 59),
-        Quote(text: "你不差，只是还没狠过心。", mode: .weightLoss, number: 60),
+        // 我要减肥 (20条示例)
+        Quote(text: "去年拍的照片，脸小得不像你。", mode: .weightLoss, number: 1, segments: [
+            TextSegment(text: "去年拍的照片，脸小得", isImportant: false),
+            TextSegment(text: "不像你", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "你戒的从来不是奶茶，是自律。", mode: .weightLoss, number: 2, segments: [
+            TextSegment(text: "你戒的从来不是", isImportant: false),
+            TextSegment(text: "奶茶", isImportant: true),
+            TextSegment(text: "，是", isImportant: false),
+            TextSegment(text: "自律", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "想瘦这件事，你说过很多遍了。", mode: .weightLoss, number: 3, segments: [
+            TextSegment(text: "想瘦", isImportant: true),
+            TextSegment(text: "这件事，你说过很多遍了。", isImportant: false)
+        ]),
+        Quote(text: "那条裤子不是缩水，是你膨胀。", mode: .weightLoss, number: 4, segments: [
+            TextSegment(text: "那条裤子不是缩水，是你", isImportant: false),
+            TextSegment(text: "膨胀", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "那天发誓要瘦，现在胖得更稳。", mode: .weightLoss, number: 5, segments: [
+            TextSegment(text: "那天", isImportant: false),
+            TextSegment(text: "发誓", isImportant: true),
+            TextSegment(text: "要瘦，现在", isImportant: false),
+            TextSegment(text: "胖得更稳", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "减肥，是重新掌控自己的人生。", mode: .weightLoss, number: 6, segments: [
+            TextSegment(text: "减肥", isImportant: true),
+            TextSegment(text: "，是重新", isImportant: false),
+            TextSegment(text: "掌控", isImportant: true),
+            TextSegment(text: "自己的人生。", isImportant: false)
+        ]),
+        Quote(text: "想吃就吃，是你最大的不自由。", mode: .weightLoss, number: 7, segments: [
+            TextSegment(text: "想吃就吃", isImportant: true),
+            TextSegment(text: "，是你最大的", isImportant: false),
+            TextSegment(text: "不自由", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "胖不是问题，是你不解决问题。", mode: .weightLoss, number: 8, segments: [
+            TextSegment(text: "胖不是问题，是你", isImportant: false),
+            TextSegment(text: "不解决", isImportant: true),
+            TextSegment(text: "问题。", isImportant: false)
+        ]),
+        Quote(text: "长得不差，输在太爱吃。", mode: .weightLoss, number: 9, segments: [
+            TextSegment(text: "长得不差，输在", isImportant: false),
+            TextSegment(text: "太爱吃", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "好看的脸，不该躲在双下巴后。", mode: .weightLoss, number: 10, segments: [
+            TextSegment(text: "好看的", isImportant: false),
+            TextSegment(text: "脸", isImportant: true),
+            TextSegment(text: "，不该躲在", isImportant: false),
+            TextSegment(text: "双下巴", isImportant: true),
+            TextSegment(text: "后。", isImportant: false)
+        ]),
+        Quote(text: "瘦下来会更美，不是更好看，是更自信。", mode: .weightLoss, number: 11, segments: [
+            TextSegment(text: "瘦下来", isImportant: true),
+            TextSegment(text: "会更美，不是更好看，是更", isImportant: false),
+            TextSegment(text: "自信", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "明明可以靠脸，非要靠修图。", mode: .weightLoss, number: 12, segments: [
+            TextSegment(text: "明明可以靠", isImportant: false),
+            TextSegment(text: "脸", isImportant: true),
+            TextSegment(text: "，非要靠", isImportant: false),
+            TextSegment(text: "修图", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "奶茶三分糖，体脂百分百。", mode: .weightLoss, number: 13, segments: [
+            TextSegment(text: "奶茶", isImportant: true),
+            TextSegment(text: "三分糖，", isImportant: false),
+            TextSegment(text: "体脂", isImportant: true),
+            TextSegment(text: "百分百。", isImportant: false)
+        ]),
+        Quote(text: "镜子里的你，还在等你心动。", mode: .weightLoss, number: 14, segments: [
+            TextSegment(text: "镜子", isImportant: true),
+            TextSegment(text: "里的你，还在等你", isImportant: false),
+            TextSegment(text: "心动", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "美貌与自律，不是对立关系。", mode: .weightLoss, number: 15, segments: [
+            TextSegment(text: "美貌", isImportant: true),
+            TextSegment(text: "与", isImportant: false),
+            TextSegment(text: "自律", isImportant: true),
+            TextSegment(text: "，不是对立关系。", isImportant: false)
+        ]),
+        Quote(text: "\"明天开始\"是体重的保护神。", mode: .weightLoss, number: 16, segments: [
+            TextSegment(text: "\"明天开始\"", isImportant: true),
+            TextSegment(text: "是体重的", isImportant: false),
+            TextSegment(text: "保护神", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "热量不会因为你后悔就退货。", mode: .weightLoss, number: 17, segments: [
+            TextSegment(text: "热量", isImportant: true),
+            TextSegment(text: "不会因为你后悔就", isImportant: false),
+            TextSegment(text: "退货", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "你还记得你上次瘦的时候吗？", mode: .weightLoss, number: 18, segments: [
+            TextSegment(text: "你还记得你", isImportant: false),
+            TextSegment(text: "上次瘦", isImportant: true),
+            TextSegment(text: "的时候吗？", isImportant: false)
+        ]),
+        Quote(text: "你在焦虑胖的同时，吃得真香。", mode: .weightLoss, number: 19, segments: [
+            TextSegment(text: "你在", isImportant: false),
+            TextSegment(text: "焦虑胖", isImportant: true),
+            TextSegment(text: "的同时，", isImportant: false),
+            TextSegment(text: "吃得真香", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "减肥路上，你太容易放过自己。", mode: .weightLoss, number: 20, segments: [
+            TextSegment(text: "减肥路上，你太容易", isImportant: false),
+            TextSegment(text: "放过", isImportant: true),
+            TextSegment(text: "自己。", isImportant: false)
+        ]),
         
-        // 我要上岸 (60条)
-        Quote(text: "明明可以上岸，却在刷短剧。", mode: .getAshore, number: 1),
-        Quote(text: "第一志愿已经等你很久了。", mode: .getAshore, number: 2),
-        Quote(text: "脑子聪明，用在背歌词可惜了。", mode: .getAshore, number: 3),
-        Quote(text: "背得了星座，背不下定义？", mode: .getAshore, number: 4),
-        Quote(text: "你不是不会写，是太会逃避。", mode: .getAshore, number: 5),
-        Quote(text: "智商在线，作业下线。", mode: .getAshore, number: 6),
-        Quote(text: "本来能靠脑袋，非要靠熬夜。", mode: .getAshore, number: 7),
-        Quote(text: "会分析爱情，却不会写分析题。", mode: .getAshore, number: 8),
-        Quote(text: "脑子不差，差的是野心。", mode: .getAshore, number: 9),
-        Quote(text: "明明是逻辑天才，却被数学吊打。", mode: .getAshore, number: 10),
-        Quote(text: "你不是懒，是对自己太温柔。", mode: .getAshore, number: 11),
-        Quote(text: "脑袋挺亮，手机更亮。", mode: .getAshore, number: 12),
-        Quote(text: "书干净得像从没看过。", mode: .getAshore, number: 13),
-        Quote(text: "你会的是选择题，选了放弃。", mode: .getAshore, number: 14),
-        Quote(text: "能熬夜追番，为何不能刷卷？", mode: .getAshore, number: 15),
-        Quote(text: "本该在考场发光，结果在床上发呆。", mode: .getAshore, number: 16),
-        Quote(text: "你看得懂暗恋，却看不懂课本？", mode: .getAshore, number: 17),
-        Quote(text: "才华配得上第一志愿吗？", mode: .getAshore, number: 18),
-        Quote(text: "你输在坚持，不是能力。", mode: .getAshore, number: 19),
-        Quote(text: "想考高分，先考过自己。", mode: .getAshore, number: 20),
-        Quote(text: "你天赋不差，只是太佛。", mode: .getAshore, number: 21),
-        Quote(text: "学习是治愈焦虑的特效药。", mode: .getAshore, number: 22),
-        Quote(text: "躺平一时爽，落榜泪两行。", mode: .getAshore, number: 23),
-        Quote(text: "自律从不是天赋，是选择。", mode: .getAshore, number: 24),
-        Quote(text: "背不动知识，背得动遗憾吗？", mode: .getAshore, number: 25),
-        Quote(text: "你该刷的是题，不是手机。", mode: .getAshore, number: 26),
-        Quote(text: "别让脑子只配段子，不配高分。", mode: .getAshore, number: 27),
-        Quote(text: "想逃避的那题，是重点。", mode: .getAshore, number: 28),
-        Quote(text: "一道题都不写，成绩怎么来？", mode: .getAshore, number: 29),
-        Quote(text: "坐得住的人，才坐得上领奖台。", mode: .getAshore, number: 30),
-        Quote(text: "学习不难，难在你不开始。", mode: .getAshore, number: 31),
-        Quote(text: "成绩不会放过你，只认硬实力。", mode: .getAshore, number: 32),
-        Quote(text: "别让未来的你，后悔此刻。", mode: .getAshore, number: 33),
-        Quote(text: "一分耕耘，一分绩点。", mode: .getAshore, number: 34),
-        Quote(text: "好结果在等你，但你得开始学。", mode: .getAshore, number: 35),
-        Quote(text: "今天你对学习爱答不理，明天它让你高攀不起。", mode: .getAshore, number: 36),
-        Quote(text: "想得多，不如干得狠。", mode: .getAshore, number: 37),
-        Quote(text: "你的效率配得上梦想吗？", mode: .getAshore, number: 38),
-        Quote(text: "想改变命运？先改作息。", mode: .getAshore, number: 39),
-        Quote(text: "想飞得高，就别怕摔。", mode: .getAshore, number: 40),
-        Quote(text: "你愿意苦一阵，还是苦一生？", mode: .getAshore, number: 41),
-        Quote(text: "Beauty isn't the plan. Power is.", mode: .getAshore, number: 42),
-        Quote(text: "没想做小女人，只想做大写的我。", mode: .getAshore, number: 43),
-        Quote(text: "野心是我最美的妆容。", mode: .getAshore, number: 44),
-        Quote(text: "拿得起眼线，也拿得起局面。", mode: .getAshore, number: 45),
-        Quote(text: "我不是讨好型人格，是结果型。", mode: .getAshore, number: 46),
-        Quote(text: "在一切愿望里，我选择前途。", mode: .getAshore, number: 47),
-        Quote(text: "世界欠我舞台，我就自己搭。", mode: .getAshore, number: 48),
-        Quote(text: "想当公主，也想当CEO。", mode: .getAshore, number: 49),
-        Quote(text: "你以为我想稳定，其实想翻盘。", mode: .getAshore, number: 50),
-        Quote(text: "我不是想赢，是本来就能赢。", mode: .getAshore, number: 51),
-        Quote(text: "美貌是加分项，努力才是主角。", mode: .getAshore, number: 52),
-        Quote(text: "事以密成，平静蓄力。", mode: .getAshore, number: 53),
-        Quote(text: "不靠幸运，我靠实力。", mode: .getAshore, number: 54),
-        Quote(text: "没人撑伞，我自己是屋檐。", mode: .getAshore, number: 55),
-        Quote(text: "大女主，请开始你的人生。", mode: .getAshore, number: 56),
-        Quote(text: "我想要的，从来不是\"差不多\"。", mode: .getAshore, number: 57),
-        Quote(text: "不说狠话，只做结果。", mode: .getAshore, number: 58),
-        Quote(text: "野心藏不住，也不打算藏。", mode: .getAshore, number: 59),
-        Quote(text: "我配得上更好的。", mode: .getAshore, number: 60),
+        // 我要上岸 (20条示例)
+        Quote(text: "明明可以上岸，却在刷短剧。", mode: .getAshore, number: 1, segments: [
+            TextSegment(text: "明明可以", isImportant: false),
+            TextSegment(text: "上岸", isImportant: true),
+            TextSegment(text: "，却在", isImportant: false),
+            TextSegment(text: "刷短剧", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "第一志愿已经等你很久了。", mode: .getAshore, number: 2, segments: [
+            TextSegment(text: "第一志愿", isImportant: true),
+            TextSegment(text: "已经", isImportant: false),
+            TextSegment(text: "等你", isImportant: true),
+            TextSegment(text: "很久了。", isImportant: false)
+        ]),
+        Quote(text: "脑子聪明，用在背歌词可惜了。", mode: .getAshore, number: 3, segments: [
+            TextSegment(text: "脑子", isImportant: true),
+            TextSegment(text: "聪明，用在", isImportant: false),
+            TextSegment(text: "背歌词", isImportant: true),
+            TextSegment(text: "可惜了。", isImportant: false)
+        ]),
+        Quote(text: "背得了星座，背不下定义？", mode: .getAshore, number: 4, segments: [
+            TextSegment(text: "背得了", isImportant: false),
+            TextSegment(text: "星座", isImportant: true),
+            TextSegment(text: "，背不下", isImportant: false),
+            TextSegment(text: "定义", isImportant: true),
+            TextSegment(text: "？", isImportant: false)
+        ]),
+        Quote(text: "你不是不会写，是太会逃避。", mode: .getAshore, number: 5, segments: [
+            TextSegment(text: "你不是不会写，是太会", isImportant: false),
+            TextSegment(text: "逃避", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "智商在线，作业下线。", mode: .getAshore, number: 6, segments: [
+            TextSegment(text: "智商", isImportant: true),
+            TextSegment(text: "在线，", isImportant: false),
+            TextSegment(text: "作业", isImportant: true),
+            TextSegment(text: "下线。", isImportant: false)
+        ]),
+        Quote(text: "本来能靠脑袋，非要靠熬夜。", mode: .getAshore, number: 7, segments: [
+            TextSegment(text: "本来能靠", isImportant: false),
+            TextSegment(text: "脑袋", isImportant: true),
+            TextSegment(text: "，非要靠", isImportant: false),
+            TextSegment(text: "熬夜", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "会分析爱情，却不会写分析题。", mode: .getAshore, number: 8, segments: [
+            TextSegment(text: "会分析", isImportant: false),
+            TextSegment(text: "爱情", isImportant: true),
+            TextSegment(text: "，却不会写", isImportant: false),
+            TextSegment(text: "分析题", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "脑子不差，差的是野心。", mode: .getAshore, number: 9, segments: [
+            TextSegment(text: "脑子不差，差的是", isImportant: false),
+            TextSegment(text: "野心", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "明明是逻辑天才，却被数学吊打。", mode: .getAshore, number: 10, segments: [
+            TextSegment(text: "明明是", isImportant: false),
+            TextSegment(text: "逻辑天才", isImportant: true),
+            TextSegment(text: "，却被", isImportant: false),
+            TextSegment(text: "数学", isImportant: true),
+            TextSegment(text: "吊打。", isImportant: false)
+        ]),
+        Quote(text: "你不是懒，是对自己太温柔。", mode: .getAshore, number: 11, segments: [
+            TextSegment(text: "你不是懒，是对自己太", isImportant: false),
+            TextSegment(text: "温柔", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "脑袋挺亮，手机更亮。", mode: .getAshore, number: 12, segments: [
+            TextSegment(text: "脑袋", isImportant: true),
+            TextSegment(text: "挺亮，", isImportant: false),
+            TextSegment(text: "手机", isImportant: true),
+            TextSegment(text: "更亮。", isImportant: false)
+        ]),
+        Quote(text: "书干净得像从没看过。", mode: .getAshore, number: 13, segments: [
+            TextSegment(text: "书", isImportant: true),
+            TextSegment(text: "干净得像", isImportant: false),
+            TextSegment(text: "从没看过", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "你会的是选择题，选了放弃。", mode: .getAshore, number: 14, segments: [
+            TextSegment(text: "你会的是", isImportant: false),
+            TextSegment(text: "选择题", isImportant: true),
+            TextSegment(text: "，选了", isImportant: false),
+            TextSegment(text: "放弃", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "能熬夜追番，为何不能刷卷？", mode: .getAshore, number: 15, segments: [
+            TextSegment(text: "能", isImportant: false),
+            TextSegment(text: "熬夜追番", isImportant: true),
+            TextSegment(text: "，为何不能", isImportant: false),
+            TextSegment(text: "刷卷", isImportant: true),
+            TextSegment(text: "？", isImportant: false)
+        ]),
+        Quote(text: "本该在考场发光，结果在床上发呆。", mode: .getAshore, number: 16, segments: [
+            TextSegment(text: "本该在", isImportant: false),
+            TextSegment(text: "考场", isImportant: true),
+            TextSegment(text: "发光，结果在", isImportant: false),
+            TextSegment(text: "床上", isImportant: true),
+            TextSegment(text: "发呆。", isImportant: false)
+        ]),
+        Quote(text: "你看得懂暗恋，却看不懂课本？", mode: .getAshore, number: 17, segments: [
+            TextSegment(text: "你看得懂", isImportant: false),
+            TextSegment(text: "暗恋", isImportant: true),
+            TextSegment(text: "，却看不懂", isImportant: false),
+            TextSegment(text: "课本", isImportant: true),
+            TextSegment(text: "？", isImportant: false)
+        ]),
+        Quote(text: "才华配得上第一志愿吗？", mode: .getAshore, number: 18, segments: [
+            TextSegment(text: "才华", isImportant: true),
+            TextSegment(text: "配得上", isImportant: false),
+            TextSegment(text: "第一志愿", isImportant: true),
+            TextSegment(text: "吗？", isImportant: false)
+        ]),
+        Quote(text: "你输在坚持，不是能力。", mode: .getAshore, number: 19, segments: [
+            TextSegment(text: "你输在", isImportant: false),
+            TextSegment(text: "坚持", isImportant: true),
+            TextSegment(text: "，不是", isImportant: false),
+            TextSegment(text: "能力", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "想考高分，先考过自己。", mode: .getAshore, number: 20, segments: [
+            TextSegment(text: "想", isImportant: false),
+            TextSegment(text: "考高分", isImportant: true),
+            TextSegment(text: "，先", isImportant: false),
+            TextSegment(text: "考过", isImportant: true),
+            TextSegment(text: "自己。", isImportant: false)
+        ]),
         
-        // 我要搞钱 (60条)
-        Quote(text: "想要的太贵，不靠幻想买单。", mode: .makeMoney, number: 1),
-        Quote(text: "赚钱不是贪心，是清醒。", mode: .makeMoney, number: 2),
-        Quote(text: "我想要的生活，不便宜。", mode: .makeMoney, number: 3),
-        Quote(text: "我没有摆烂的预算。", mode: .makeMoney, number: 4),
-        Quote(text: "我拒绝无薪野心。", mode: .makeMoney, number: 5),
-        Quote(text: "野心落地的声音，是到账。", mode: .makeMoney, number: 6),
-        Quote(text: "情绪要管理，收入也一样。", mode: .makeMoney, number: 7),
-        Quote(text: "生气不如赚钱快。", mode: .makeMoney, number: 8),
-        Quote(text: "我值几个零，心里有数。", mode: .makeMoney, number: 9),
-        Quote(text: "我不是野路子，是野心有路子。", mode: .makeMoney, number: 10),
-        Quote(text: "钱给我安全感，也给我退路。", mode: .makeMoney, number: 11),
-        Quote(text: "自信靠积累，底气靠存款。", mode: .makeMoney, number: 12),
-        Quote(text: "穿得起想穿的，住得起想住的。", mode: .makeMoney, number: 13),
-        Quote(text: "外表淡定，账户火热。", mode: .makeMoney, number: 14),
-        Quote(text: "低调做事，默默搞钱。", mode: .makeMoney, number: 15),
-        Quote(text: "我只对结果动心。", mode: .makeMoney, number: 16),
-        Quote(text: "你喜欢内耗，我喜欢回报率。", mode: .makeMoney, number: 17),
-        Quote(text: "赢，不需要通知全世界。", mode: .makeMoney, number: 18),
-        Quote(text: "表面柔软，内里精算。", mode: .makeMoney, number: 19),
-        Quote(text: "我搞钱，不搞情绪波动。", mode: .makeMoney, number: 20),
-        Quote(text: "自由从来都不便宜。", mode: .makeMoney, number: 21),
-        Quote(text: "我的安全感，不靠人，靠现金流。", mode: .makeMoney, number: 22),
-        Quote(text: "搞钱是我与世界交手最温柔的方式。", mode: .makeMoney, number: 23),
-        Quote(text: "钱是我能量场的放大器。", mode: .makeMoney, number: 24),
-        Quote(text: "我从不炫富，我炫清醒。", mode: .makeMoney, number: 25),
-        Quote(text: "我努力不是为谁，是为我账户余额。", mode: .makeMoney, number: 26),
-        Quote(text: "生活不稳定，但我稳定变现。", mode: .makeMoney, number: 27),
-        Quote(text: "不是我不拼命，是我不随便展示。", mode: .makeMoney, number: 28),
-        Quote(text: "能稳稳搞钱，是最大的安全感。", mode: .makeMoney, number: 29),
-        Quote(text: "没必要懂我，只要别拖我进度。", mode: .makeMoney, number: 30),
-        Quote(text: "我不浪费时间去解释野心。", mode: .makeMoney, number: 31),
-        Quote(text: "搞钱是让自己有自由的能力。", mode: .makeMoney, number: 32),
-        Quote(text: "我要的生活，必须自己争取。", mode: .makeMoney, number: 33),
-        Quote(text: "一边赚钱，一边升级。", mode: .makeMoney, number: 34),
-        Quote(text: "收入是最真实的反馈。", mode: .makeMoney, number: 35),
-        Quote(text: "看似佛，实际心思全在搞钱。", mode: .makeMoney, number: 36),
-        Quote(text: "我不炫耀，但我盈余。", mode: .makeMoney, number: 37),
-        Quote(text: "我不被定义，我自己定价。", mode: .makeMoney, number: 38),
-        Quote(text: "我的目标不止是上桌，是掌盘。", mode: .makeMoney, number: 39),
-        Quote(text: "我要的不是位置，是权力。", mode: .makeMoney, number: 40),
-        Quote(text: "挺住，是为了狠狠地收钱。", mode: .makeMoney, number: 41),
-        Quote(text: "谁说女人不该野？我偏偏不收敛。", mode: .makeMoney, number: 42),
-        Quote(text: "一步一步搞钱，谁都拦不住。", mode: .makeMoney, number: 43),
-        Quote(text: "能搞钱的女人，随时可以重启人生。", mode: .makeMoney, number: 44),
-        Quote(text: "我赚钱，是为了不困在烂事里。", mode: .makeMoney, number: 45),
-        Quote(text: "不想活成省出来的样子。", mode: .makeMoney, number: 46),
-        Quote(text: "自由感的本质，是财务不焦虑。", mode: .makeMoney, number: 47),
-        Quote(text: "我不是物质，我只是不想苟且。", mode: .makeMoney, number: 48),
-        Quote(text: "有能力让自己活成喜欢的样子，才是本事。", mode: .makeMoney, number: 49),
-        Quote(text: "经济独立的女人，从来不卑微。", mode: .makeMoney, number: 50),
-        Quote(text: "搞钱不是态度，是体质。", mode: .makeMoney, number: 51),
-        Quote(text: "赚钱不是目标，是基本能力。", mode: .makeMoney, number: 52),
-        Quote(text: "账单很真实，我更现实。", mode: .makeMoney, number: 53),
-        Quote(text: "不怕没人撑腰，我自己会结算。", mode: .makeMoney, number: 54),
-        Quote(text: "我不是情绪稳定，是账户稳定。", mode: .makeMoney, number: 55),
-        Quote(text: "我拒绝廉价的温柔。", mode: .makeMoney, number: 56),
-        Quote(text: "我有耐心，因为我有目标。", mode: .makeMoney, number: 57),
-        Quote(text: "账上有数，才说得出\"无所谓\"。", mode: .makeMoney, number: 58),
-        Quote(text: "人生不讲浪漫主义，只讲现金流。", mode: .makeMoney, number: 59),
-        Quote(text: "自由是搞钱的副作用。", mode: .makeMoney, number: 60),
+        // 我要搞钱 (20条示例)
+        Quote(text: "想要的太贵，不靠幻想买单。", mode: .makeMoney, number: 1, segments: [
+            TextSegment(text: "想要的", isImportant: false),
+            TextSegment(text: "太贵", isImportant: true),
+            TextSegment(text: "，不靠", isImportant: false),
+            TextSegment(text: "幻想", isImportant: true),
+            TextSegment(text: "买单。", isImportant: false)
+        ]),
+        Quote(text: "赚钱不是贪心，是清醒。", mode: .makeMoney, number: 2, segments: [
+            TextSegment(text: "赚钱", isImportant: true),
+            TextSegment(text: "不是贪心，是", isImportant: false),
+            TextSegment(text: "清醒", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "我想要的生活，不便宜。", mode: .makeMoney, number: 3, segments: [
+            TextSegment(text: "我想要的", isImportant: false),
+            TextSegment(text: "生活", isImportant: true),
+            TextSegment(text: "，", isImportant: false),
+            TextSegment(text: "不便宜", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "我没有摆烂的预算。", mode: .makeMoney, number: 4, segments: [
+            TextSegment(text: "我没有", isImportant: false),
+            TextSegment(text: "摆烂", isImportant: true),
+            TextSegment(text: "的预算。", isImportant: false)
+        ]),
+        Quote(text: "我拒绝无薪野心。", mode: .makeMoney, number: 5, segments: [
+            TextSegment(text: "我拒绝", isImportant: false),
+            TextSegment(text: "无薪", isImportant: true),
+            TextSegment(text: "野心。", isImportant: false)
+        ]),
+        Quote(text: "野心落地的声音，是到账。", mode: .makeMoney, number: 6, segments: [
+            TextSegment(text: "野心", isImportant: true),
+            TextSegment(text: "落地的声音，是", isImportant: false),
+            TextSegment(text: "到账", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "情绪要管理，收入也一样。", mode: .makeMoney, number: 7, segments: [
+            TextSegment(text: "情绪", isImportant: true),
+            TextSegment(text: "要管理，", isImportant: false),
+            TextSegment(text: "收入", isImportant: true),
+            TextSegment(text: "也一样。", isImportant: false)
+        ]),
+        Quote(text: "生气不如赚钱快。", mode: .makeMoney, number: 8, segments: [
+            TextSegment(text: "生气", isImportant: false),
+            TextSegment(text: "不如", isImportant: false),
+            TextSegment(text: "赚钱", isImportant: true),
+            TextSegment(text: "快。", isImportant: false)
+        ]),
+        Quote(text: "我值几个零，心里有数。", mode: .makeMoney, number: 9, segments: [
+            TextSegment(text: "我值", isImportant: false),
+            TextSegment(text: "几个零", isImportant: true),
+            TextSegment(text: "，", isImportant: false),
+            TextSegment(text: "心里有数", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "我不是野路子，是野心有路子。", mode: .makeMoney, number: 10, segments: [
+            TextSegment(text: "我不是野路子，是", isImportant: false),
+            TextSegment(text: "野心", isImportant: true),
+            TextSegment(text: "有路子。", isImportant: false)
+        ]),
+        Quote(text: "钱给我安全感，也给我退路。", mode: .makeMoney, number: 11, segments: [
+            TextSegment(text: "钱", isImportant: true),
+            TextSegment(text: "给我", isImportant: false),
+            TextSegment(text: "安全感", isImportant: true),
+            TextSegment(text: "，也给我", isImportant: false),
+            TextSegment(text: "退路", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "自信靠积累，底气靠存款。", mode: .makeMoney, number: 12, segments: [
+            TextSegment(text: "自信", isImportant: true),
+            TextSegment(text: "靠积累，", isImportant: false),
+            TextSegment(text: "底气", isImportant: true),
+            TextSegment(text: "靠存款。", isImportant: false)
+        ]),
+        Quote(text: "穿得起想穿的，住得起想住的。", mode: .makeMoney, number: 13, segments: [
+            TextSegment(text: "穿得起", isImportant: true),
+            TextSegment(text: "想穿的，", isImportant: false),
+            TextSegment(text: "住得起", isImportant: true),
+            TextSegment(text: "想住的。", isImportant: false)
+        ]),
+        Quote(text: "外表淡定，账户火热。", mode: .makeMoney, number: 14, segments: [
+            TextSegment(text: "外表", isImportant: false),
+            TextSegment(text: "淡定", isImportant: true),
+            TextSegment(text: "，", isImportant: false),
+            TextSegment(text: "账户", isImportant: true),
+            TextSegment(text: "火热。", isImportant: false)
+        ]),
+        Quote(text: "低调做事，默默搞钱。", mode: .makeMoney, number: 15, segments: [
+            TextSegment(text: "低调", isImportant: true),
+            TextSegment(text: "做事，", isImportant: false),
+            TextSegment(text: "默默", isImportant: true),
+            TextSegment(text: "搞钱。", isImportant: false)
+        ]),
+        Quote(text: "我只对结果动心。", mode: .makeMoney, number: 16, segments: [
+            TextSegment(text: "我只对", isImportant: false),
+            TextSegment(text: "结果", isImportant: true),
+            TextSegment(text: "动心。", isImportant: false)
+        ]),
+        Quote(text: "你喜欢内耗，我喜欢回报率。", mode: .makeMoney, number: 17, segments: [
+            TextSegment(text: "你喜欢", isImportant: false),
+            TextSegment(text: "内耗", isImportant: true),
+            TextSegment(text: "，我喜欢", isImportant: false),
+            TextSegment(text: "回报率", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "赢，不需要通知全世界。", mode: .makeMoney, number: 18, segments: [
+            TextSegment(text: "赢", isImportant: true),
+            TextSegment(text: "，不需要通知全世界。", isImportant: false)
+        ]),
+        Quote(text: "表面柔软，内里精算。", mode: .makeMoney, number: 19, segments: [
+            TextSegment(text: "表面", isImportant: false),
+            TextSegment(text: "柔软", isImportant: true),
+            TextSegment(text: "，内里", isImportant: false),
+            TextSegment(text: "精算", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "我搞钱，不搞情绪波动。", mode: .makeMoney, number: 20, segments: [
+            TextSegment(text: "我", isImportant: false),
+            TextSegment(text: "搞钱", isImportant: true),
+            TextSegment(text: "，不搞", isImportant: false),
+            TextSegment(text: "情绪波动", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
         
-        // 我要好运 (60条)
-        Quote(text: "结果比你想象中更好。", mode: .goodLuck, number: 1),
-        Quote(text: "转折，正在悄悄向你靠近。", mode: .goodLuck, number: 2),
-        Quote(text: "错过的是考验，来的是好运。", mode: .goodLuck, number: 3),
-        Quote(text: "宇宙从不缺席，只是暂时沉默。", mode: .goodLuck, number: 4),
-        Quote(text: "当你放下控制，幸运才开始工作。", mode: .goodLuck, number: 5),
-        Quote(text: "所有美好的事物，正在加速奔向你。", mode: .goodLuck, number: 6),
-        Quote(text: "你的名字，正在被好运记住。", mode: .goodLuck, number: 7),
-        Quote(text: "延迟的回应，也在路上了。", mode: .goodLuck, number: 8),
-        Quote(text: "等你准备好，礼物就会来。", mode: .goodLuck, number: 9),
-        Quote(text: "命运正在悄悄偏向你这一边。", mode: .goodLuck, number: 10),
-        Quote(text: "你正在变成值得被好运追上的人。", mode: .goodLuck, number: 11),
-        Quote(text: "你的光，会被看见。", mode: .goodLuck, number: 12),
-        Quote(text: "接下来，是属于你的回合。", mode: .goodLuck, number: 13),
-        Quote(text: "别急，好事会按时到来。", mode: .goodLuck, number: 14),
-        Quote(text: "一切都在酝酿最适合你的节奏。", mode: .goodLuck, number: 15),
-        Quote(text: "你以为是结尾，其实是转场。", mode: .goodLuck, number: 16),
-        Quote(text: "你想要的生活，也在找你。", mode: .goodLuck, number: 17),
-        Quote(text: "所有的等待，都会被回应。", mode: .goodLuck, number: 18),
-        Quote(text: "没有白走的路，每一步都算数。", mode: .goodLuck, number: 19),
-        Quote(text: "好运不是突然，是刚刚好。", mode: .goodLuck, number: 20),
-        Quote(text: "放松一点，机会才看得见你。", mode: .goodLuck, number: 21),
-        Quote(text: "别急着判断今天的意义。", mode: .goodLuck, number: 22),
-        Quote(text: "宇宙听得见你没说出口的愿望。", mode: .goodLuck, number: 23),
-        Quote(text: "当你相信自己，幸运才会加速。", mode: .goodLuck, number: 24),
-        Quote(text: "你值得拥有你渴望的一切。", mode: .goodLuck, number: 25),
-        Quote(text: "稍微松一点，幸福才好靠近。", mode: .goodLuck, number: 26),
-        Quote(text: "幸福不是努力得来，是允许它进来。", mode: .goodLuck, number: 27),
-        Quote(text: "没关系，你一直都在被照顾。", mode: .goodLuck, number: 28),
-        Quote(text: "宇宙比你想得更偏心你。", mode: .goodLuck, number: 29),
-        Quote(text: "你的名字，已写进好运清单。", mode: .goodLuck, number: 30),
-        Quote(text: "下一站，不再是试炼。", mode: .goodLuck, number: 31),
-        Quote(text: "你已经跨过最难的那关。", mode: .goodLuck, number: 32),
-        Quote(text: "所有错开的，都是为刚好让你赶上。", mode: .goodLuck, number: 33),
-        Quote(text: "你不需要讨好命运，它早已向你点头。", mode: .goodLuck, number: 34),
-        Quote(text: "未来会证明，你有选择的勇气。", mode: .goodLuck, number: 35),
-        Quote(text: "天不会白黑，你也不会白努力。", mode: .goodLuck, number: 36),
-        Quote(text: "幸运正在翻山越岭赶来见你。", mode: .goodLuck, number: 37),
-        Quote(text: "你没看错，好运就是为你来的。", mode: .goodLuck, number: 38),
-        Quote(text: "宇宙的沉默，是深思后的安排。", mode: .goodLuck, number: 39),
-        Quote(text: "所有低谷都是登高前的深蹲。", mode: .goodLuck, number: 40),
-        Quote(text: "冥冥之中，有力量牵引你靠近对的地方。", mode: .goodLuck, number: 41),
-        Quote(text: "世界对你已经亮起绿灯。", mode: .goodLuck, number: 42),
-        Quote(text: "你没看到的努力，宇宙看得清清楚楚。", mode: .goodLuck, number: 43),
-        Quote(text: "你心中的光，宇宙会放大给世界看。", mode: .goodLuck, number: 44),
-        Quote(text: "你是被选中的，不用再怀疑了。", mode: .goodLuck, number: 45),
-        Quote(text: "有些好运，需要你相信它存在。", mode: .goodLuck, number: 46),
-        Quote(text: "它会来的，就像春天不会跳过你。", mode: .goodLuck, number: 47),
-        Quote(text: "每一次平静，都是能量的积蓄。", mode: .goodLuck, number: 48),
-        Quote(text: "你走得越稳，好运越不慌。", mode: .goodLuck, number: 49),
-        Quote(text: "你稳定的时候，最容易吸引好事。", mode: .goodLuck, number: 50),
-        Quote(text: "幸运之门，已经微微开了一道缝。", mode: .goodLuck, number: 51),
-        Quote(text: "有力量在替你铺路，即使你没察觉。", mode: .goodLuck, number: 52),
-        Quote(text: "你发出的每个善意，都在累积回响。", mode: .goodLuck, number: 53),
-        Quote(text: "命运偏爱相信它的人。", mode: .goodLuck, number: 54),
-        Quote(text: "钱、爱与好运，正在路上。", mode: .goodLuck, number: 55),
-        Quote(text: "你想接住的，好事都能来。", mode: .goodLuck, number: 56),
-        Quote(text: "有人正准备对你好。", mode: .goodLuck, number: 57),
-        Quote(text: "生活会一点点对你温柔。", mode: .goodLuck, number: 58),
-        Quote(text: "想赚的钱，能赚到。", mode: .goodLuck, number: 59),
-        Quote(text: "下一件好事，会是你喜欢的方向。", mode: .goodLuck, number: 60)
+        // 我要好运 (20条示例)
+        Quote(text: "结果比你想象中更好。", mode: .goodLuck, number: 1, segments: [
+            TextSegment(text: "结果", isImportant: true),
+            TextSegment(text: "比你想象中", isImportant: false),
+            TextSegment(text: "更好", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "转折，正在悄悄向你靠近。", mode: .goodLuck, number: 2, segments: [
+            TextSegment(text: "转折", isImportant: true),
+            TextSegment(text: "，正在悄悄向你", isImportant: false),
+            TextSegment(text: "靠近", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "错过的是考验，来的是好运。", mode: .goodLuck, number: 3, segments: [
+            TextSegment(text: "错过的是", isImportant: false),
+            TextSegment(text: "考验", isImportant: true),
+            TextSegment(text: "，来的是", isImportant: false),
+            TextSegment(text: "好运", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "宇宙从不缺席，只是暂时沉默。", mode: .goodLuck, number: 4, segments: [
+            TextSegment(text: "宇宙", isImportant: true),
+            TextSegment(text: "从不缺席，只是暂时", isImportant: false),
+            TextSegment(text: "沉默", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "当你放下控制，幸运才开始工作。", mode: .goodLuck, number: 5, segments: [
+            TextSegment(text: "当你", isImportant: false),
+            TextSegment(text: "放下", isImportant: true),
+            TextSegment(text: "控制，", isImportant: false),
+            TextSegment(text: "幸运", isImportant: true),
+            TextSegment(text: "才开始工作。", isImportant: false)
+        ]),
+        Quote(text: "所有美好的事物，正在加速奔向你。", mode: .goodLuck, number: 6, segments: [
+            TextSegment(text: "所有", isImportant: false),
+            TextSegment(text: "美好", isImportant: true),
+            TextSegment(text: "的事物，正在", isImportant: false),
+            TextSegment(text: "奔向你", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "你的名字，正在被好运记住。", mode: .goodLuck, number: 7, segments: [
+            TextSegment(text: "你的", isImportant: false),
+            TextSegment(text: "名字", isImportant: true),
+            TextSegment(text: "，正在被", isImportant: false),
+            TextSegment(text: "好运", isImportant: true),
+            TextSegment(text: "记住。", isImportant: false)
+        ]),
+        Quote(text: "延迟的回应，也在路上了。", mode: .goodLuck, number: 8, segments: [
+            TextSegment(text: "延迟的", isImportant: false),
+            TextSegment(text: "回应", isImportant: true),
+            TextSegment(text: "，也在", isImportant: false),
+            TextSegment(text: "路上", isImportant: true),
+            TextSegment(text: "了。", isImportant: false)
+        ]),
+        Quote(text: "等你准备好，礼物就会来。", mode: .goodLuck, number: 9, segments: [
+            TextSegment(text: "等你", isImportant: false),
+            TextSegment(text: "准备好", isImportant: true),
+            TextSegment(text: "，", isImportant: false),
+            TextSegment(text: "礼物", isImportant: true),
+            TextSegment(text: "就会来。", isImportant: false)
+        ]),
+        Quote(text: "命运正在悄悄偏向你这一边。", mode: .goodLuck, number: 10, segments: [
+            TextSegment(text: "命运", isImportant: true),
+            TextSegment(text: "正在悄悄", isImportant: false),
+            TextSegment(text: "偏向你", isImportant: true),
+            TextSegment(text: "这一边。", isImportant: false)
+        ]),
+        Quote(text: "你正在变成值得被好运追上的人。", mode: .goodLuck, number: 11, segments: [
+            TextSegment(text: "你正在变成值得被", isImportant: false),
+            TextSegment(text: "好运", isImportant: true),
+            TextSegment(text: "追上的人。", isImportant: false)
+        ]),
+        Quote(text: "你的光，会被看见。", mode: .goodLuck, number: 12, segments: [
+            TextSegment(text: "你的", isImportant: false),
+            TextSegment(text: "光", isImportant: true),
+            TextSegment(text: "，会被", isImportant: false),
+            TextSegment(text: "看见", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "接下来，是属于你的回合。", mode: .goodLuck, number: 13, segments: [
+            TextSegment(text: "接下来，是属于你的", isImportant: false),
+            TextSegment(text: "回合", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "别急，好事会按时到来。", mode: .goodLuck, number: 14, segments: [
+            TextSegment(text: "别急，", isImportant: false),
+            TextSegment(text: "好事", isImportant: true),
+            TextSegment(text: "会", isImportant: false),
+            TextSegment(text: "按时到来", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "一切都在酝酿最适合你的节奏。", mode: .goodLuck, number: 15, segments: [
+            TextSegment(text: "一切都在酝酿最适合你的", isImportant: false),
+            TextSegment(text: "节奏", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "你以为是结尾，其实是转场。", mode: .goodLuck, number: 16, segments: [
+            TextSegment(text: "你以为是", isImportant: false),
+            TextSegment(text: "结尾", isImportant: true),
+            TextSegment(text: "，其实是", isImportant: false),
+            TextSegment(text: "转场", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "你想要的生活，也在找你。", mode: .goodLuck, number: 17, segments: [
+            TextSegment(text: "你想要的", isImportant: false),
+            TextSegment(text: "生活", isImportant: true),
+            TextSegment(text: "，也在", isImportant: false),
+            TextSegment(text: "找你", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "所有的等待，都会被回应。", mode: .goodLuck, number: 18, segments: [
+            TextSegment(text: "所有的", isImportant: false),
+            TextSegment(text: "等待", isImportant: true),
+            TextSegment(text: "，都会被", isImportant: false),
+            TextSegment(text: "回应", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ]),
+        Quote(text: "没有白走的路，每一步都算数。", mode: .goodLuck, number: 19, segments: [
+            TextSegment(text: "没有白走的", isImportant: false),
+            TextSegment(text: "路", isImportant: true),
+            TextSegment(text: "，", isImportant: false),
+            TextSegment(text: "每一步", isImportant: true),
+            TextSegment(text: "都算数。", isImportant: false)
+        ]),
+        Quote(text: "好运不是突然，是刚刚好。", mode: .goodLuck, number: 20, segments: [
+            TextSegment(text: "好运", isImportant: true),
+            TextSegment(text: "不是突然，是", isImportant: false),
+            TextSegment(text: "刚刚好", isImportant: true),
+            TextSegment(text: "。", isImportant: false)
+        ])
     ]
     
     private init() {}

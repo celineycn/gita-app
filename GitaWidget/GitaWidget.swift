@@ -55,39 +55,121 @@ struct GitaWidgetEntryView : View {
         }
     }
     
+    private var importantQuoteFontSize: CGFloat {
+        switch family {
+        case .systemSmall:
+            return 22
+        case .systemMedium:
+            return 28
+        default:
+            return 30
+        }
+    }
+    
     private var sourceFontSize: CGFloat {
         switch family {
         case .systemSmall:
-            return 12
+            return 10
         case .systemMedium:
-            return 14
+            return 12
         default:
-            return 15
+            return 13
+        }
+    }
+    
+    private var dateFontSize: CGFloat {
+        switch family {
+        case .systemSmall:
+            return 22
+        case .systemMedium:
+            return 26
+        default:
+            return 28
         }
     }
     
     private var padding: CGFloat {
-        family == .systemSmall ? 12 : 16
+        family == .systemSmall ? 8 : 12
     }
     
-    // 文字颜色 - 使用 primary 自适应系统主题和背景
+    private var verticalPadding: CGFloat {
+        family == .systemSmall ? 4 : 6
+    }
+    
+    // 普通文字颜色 - 使用 primary 自适应系统主题和背景
     private var textColor: Color { .primary }
+    
+    // 重要信息颜色 - 根据模式选择不同颜色
+    private var importantTextColor: Color {
+        switch entry.quote.mode {
+        case .weightLoss:
+            return .orange
+        case .getAshore:
+            return .blue
+        case .makeMoney:
+            return .green
+        case .goodLuck:
+            return .purple
+        }
+    }
+    
+    // 构建富文本
+    private var styledText: Text {
+        var combinedText = Text("")
+        
+        for segment in entry.quote.segments {
+            let segmentText = Text(segment.text)
+                .font(.custom("TBMCYXT", size: segment.isImportant ? importantQuoteFontSize : quoteFontSize))
+                .fontWeight(segment.isImportant ? .black : .heavy)
+                .foregroundColor(segment.isImportant ? importantTextColor : textColor)
+            
+            combinedText = combinedText + segmentText
+        }
+        
+        return combinedText
+    }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            // Quote text
-            Text(entry.quote.text)
-                .font(.custom("TBMCYXT", size: quoteFontSize))
-                .fontWeight(.heavy)
-                .foregroundColor(textColor)
-                .multilineTextAlignment(.leading)
-                .lineSpacing(4)
-                .lineLimit(nil)
-                .minimumScaleFactor(0.85)
+        ZStack {
+            // 左上角日期
+            VStack {
+                HStack {
+                    styledDateText
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                    Spacer()
+                }
+                .padding(.top, verticalPadding)
+                .padding(.horizontal, padding)
+                Spacer()
+            }
             
-            Spacer()
+            // 左下角Quote区域 - 贴着底部
+            VStack {
+                Spacer()
+                HStack(alignment: .center) {
+                    // 左侧竖线 - 与Quote文字垂直居中对齐
+                    Rectangle()
+                        .fill(importantTextColor)
+                        .frame(width: 3)
+                        .frame(height: quoteFontSize * 2) // 固定高度，约为2行文字高度
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        // Quote text with styled segments
+                        styledText
+                            .multilineTextAlignment(.leading)
+                            .lineSpacing(2)
+                            .lineLimit(nil)
+                            .minimumScaleFactor(0.85)
+                    }
+                    .padding(.leading, 6)
+                    
+                    Spacer()
+                }
+                .padding(.bottom, verticalPadding)
+                .padding(.horizontal, padding)
+            }
         }
-        .padding(padding)
         .containerBackground(for: .widget) {
             // 使用厚重材质，获得类似电池widget的白色毛玻璃效果
             Rectangle()
@@ -95,6 +177,41 @@ struct GitaWidgetEntryView : View {
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(entry.quote.mode.displayName)语录: \(entry.quote.text)")
+    }
+    
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M月d日"
+        return formatter
+    }
+    
+    // 创建分段颜色的日期文本
+    private var styledDateText: Text {
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: entry.date)
+        let day = calendar.component(.day, from: entry.date)
+        
+        let monthText = Text("\(month)")
+            .font(.custom("TBMCYXT", size: dateFontSize))
+            .fontWeight(.bold)
+            .foregroundColor(importantTextColor)
+        
+        let monthUnit = Text("月")
+            .font(.custom("TBMCYXT", size: dateFontSize))
+            .fontWeight(.bold)
+            .foregroundColor(.primary)
+        
+        let dayText = Text("\(day)")
+            .font(.custom("TBMCYXT", size: dateFontSize))
+            .fontWeight(.bold)
+            .foregroundColor(importantTextColor)
+        
+        let dayUnit = Text("日")
+            .font(.custom("TBMCYXT", size: dateFontSize))
+            .fontWeight(.bold)
+            .foregroundColor(.primary)
+        
+        return monthText + monthUnit + dayText + dayUnit
     }
 }
 
