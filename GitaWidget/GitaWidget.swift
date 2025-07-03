@@ -100,15 +100,38 @@ struct GitaWidgetEntryView : View {
         family == .systemSmall ? 4 : 6
     }
     
-    // 竖条高度 - 根据widget尺寸调整
+    // 竖条高度 - 根据文字内容动态调整
     private var barHeight: CGFloat {
+        // 更准确的行数估算 - 考虑中文字符宽度
+        let textLength = entry.quote.text.count
+        let estimatedCharsPerLine: Int
+        
         switch family {
         case .systemSmall:
-            return quoteFontSize * 3.6  // 小widget再增加高度
+            estimatedCharsPerLine = 6  // 小widget每行约6个中文字符
         case .systemMedium:
-            return quoteFontSize * 1.0  // 中等widget再减少高度
+            estimatedCharsPerLine = 10 // 中等widget每行约10个中文字符
         default:
-            return quoteFontSize * 1.0
+            estimatedCharsPerLine = 10
+        }
+        
+        let estimatedLines = max(1, (textLength + estimatedCharsPerLine - 1) / estimatedCharsPerLine) // 向上取整
+        
+        // 根据行数计算竖条高度
+        let lineHeight = quoteFontSize * 1.3  // 增加行高以包含行间距
+        let baseHeight = CGFloat(estimatedLines) * lineHeight
+        
+        // 添加固定的基础高度，确保即使短文字也有合理长度
+        let minHeight = quoteFontSize * 1.5
+        let contentHeight = max(baseHeight, minHeight)
+        
+        switch family {
+        case .systemSmall:
+            return max(contentHeight * 0.85, quoteFontSize * 2.0)  // 至少2倍字体大小
+        case .systemMedium:
+            return max(contentHeight * 0.65, quoteFontSize * 1.0)  // 调整：更短的比例和最小高度
+        default:
+            return max(contentHeight * 0.65, quoteFontSize * 1.0)
         }
     }
     
