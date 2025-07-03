@@ -100,6 +100,18 @@ struct GitaWidgetEntryView : View {
         family == .systemSmall ? 4 : 6
     }
     
+    // 竖条高度 - 根据widget尺寸调整
+    private var barHeight: CGFloat {
+        switch family {
+        case .systemSmall:
+            return quoteFontSize * 3.6  // 小widget再增加高度
+        case .systemMedium:
+            return quoteFontSize * 1.0  // 中等widget再减少高度
+        default:
+            return quoteFontSize * 1.0
+        }
+    }
+    
     // 普通文字颜色 - 使用 primary 自适应系统主题和背景
     private var textColor: Color { .primary }
     
@@ -144,7 +156,7 @@ struct GitaWidgetEntryView : View {
                     Spacer()
                 }
                 .padding(.top, verticalPadding)
-                .padding(.leading, leftPadding)
+                .padding(.leading, family == .systemSmall ? 3 : 5) // 减少日期的左边距
                 .padding(.trailing, padding)
                 Spacer()
             }
@@ -153,11 +165,10 @@ struct GitaWidgetEntryView : View {
             VStack {
                 Spacer()
                 HStack(alignment: .center) {
-                    // 左侧竖线 - 与Quote文字垂直居中对齐
-                    Rectangle()
+                    // 左侧竖线 - 独立放置，根据widget尺寸调整高度
+                    RoundedRectangle(cornerRadius: 1.5)
                         .fill(importantTextColor)
-                        .frame(width: 3)
-                        .frame(height: quoteFontSize * 2) // 固定高度，约为2行文字高度
+                        .frame(width: 3, height: barHeight) // 使用动态计算的高度
                     
                     VStack(alignment: .leading, spacing: 4) {
                         // Quote text with styled segments
@@ -167,12 +178,12 @@ struct GitaWidgetEntryView : View {
                             .lineLimit(nil)
                             .minimumScaleFactor(0.85)
                     }
-                    .padding(.leading, 6)
+                    .padding(.leading, 6) // 竖条和文字之间的间距
                     
                     Spacer()
                 }
                 .padding(.bottom, verticalPadding)
-                .padding(.leading, leftPadding)
+                .padding(.leading, family == .systemSmall ? 3 : 5) // 减少quote区域的左边距，与日期对齐
                 .padding(.trailing, padding)
             }
         }
