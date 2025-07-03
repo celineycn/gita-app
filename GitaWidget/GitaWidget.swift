@@ -80,16 +80,20 @@ struct GitaWidgetEntryView : View {
     private var dateFontSize: CGFloat {
         switch family {
         case .systemSmall:
-            return 22
+            return 17.6  // 22 * 0.8 = 17.6 (减少20%)
         case .systemMedium:
-            return 26
+            return 20.8  // 26 * 0.8 = 20.8 (减少20%)
         default:
-            return 28
+            return 22.4  // 28 * 0.8 = 22.4 (减少20%)
         }
     }
     
     private var padding: CGFloat {
         family == .systemSmall ? 8 : 12
+    }
+    
+    private var leftPadding: CGFloat {
+        family == .systemSmall ? 6 : 9  // 减少1/4：8*0.75=6, 12*0.75=9
     }
     
     private var verticalPadding: CGFloat {
@@ -140,7 +144,8 @@ struct GitaWidgetEntryView : View {
                     Spacer()
                 }
                 .padding(.top, verticalPadding)
-                .padding(.horizontal, padding)
+                .padding(.leading, leftPadding)
+                .padding(.trailing, padding)
                 Spacer()
             }
             
@@ -167,7 +172,8 @@ struct GitaWidgetEntryView : View {
                     Spacer()
                 }
                 .padding(.bottom, verticalPadding)
-                .padding(.horizontal, padding)
+                .padding(.leading, leftPadding)
+                .padding(.trailing, padding)
             }
         }
         .containerBackground(for: .widget) {
@@ -192,24 +198,24 @@ struct GitaWidgetEntryView : View {
         let day = calendar.component(.day, from: entry.date)
         
         let monthText = Text("\(month)")
-            .font(.custom("TBMCYXT", size: dateFontSize))
+            .font(.system(size: dateFontSize))
             .fontWeight(.bold)
-            .foregroundColor(importantTextColor)
+            .foregroundColor(.black)
         
         let monthUnit = Text("月")
-            .font(.custom("TBMCYXT", size: dateFontSize))
+            .font(.system(size: dateFontSize))
             .fontWeight(.bold)
-            .foregroundColor(.primary)
+            .foregroundColor(.black)
         
         let dayText = Text("\(day)")
-            .font(.custom("TBMCYXT", size: dateFontSize))
+            .font(.system(size: dateFontSize))
             .fontWeight(.bold)
-            .foregroundColor(importantTextColor)
+            .foregroundColor(.black)
         
         let dayUnit = Text("日")
-            .font(.custom("TBMCYXT", size: dateFontSize))
+            .font(.system(size: dateFontSize))
             .fontWeight(.bold)
-            .foregroundColor(.primary)
+            .foregroundColor(.black)
         
         return monthText + monthUnit + dayText + dayUnit
     }
