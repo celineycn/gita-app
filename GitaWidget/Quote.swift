@@ -7,6 +7,12 @@
 
 import Foundation
 
+/// 应用程序配置常量
+struct AppConfig {
+    /// App Groups标识符，用于应用和Widget间的数据共享
+    static let appGroupIdentifier = "group.com.ycn.GitaApp"
+}
+
 enum Mode: String, CaseIterable, Codable {
     case weightLoss = "我要减肥"
     case getAshore = "我要上岸"
@@ -71,7 +77,7 @@ class SettingsManager: ObservableObject {
     static let shared = SettingsManager()
     
     // 使用App Group共享的UserDefaults
-    private let sharedDefaults = UserDefaults(suiteName: "group.com.gita.app") ?? UserDefaults.standard
+    private let sharedDefaults = UserDefaults(suiteName: AppConfig.appGroupIdentifier) ?? UserDefaults.standard
     
     @Published var selectedMode: Mode {
         didSet {

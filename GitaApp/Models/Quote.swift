@@ -72,7 +72,7 @@ class SettingsManager: ObservableObject {
     static let shared = SettingsManager()
     
     // 使用App Group共享的UserDefaults
-    private let sharedDefaults = UserDefaults(suiteName: "group.com.gita.app") ?? UserDefaults.standard
+    private let sharedDefaults = UserDefaults(suiteName: AppConfig.appGroupIdentifier) ?? UserDefaults.standard
     
     @Published var selectedMode: Mode {
         didSet {
