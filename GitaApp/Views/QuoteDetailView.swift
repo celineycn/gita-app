@@ -34,12 +34,24 @@ struct QuoteDetailView: View {
     // 构建富文本
     private var styledText: Text {
         var combinedText = Text("")
+        let language = LanguageManager.shared.currentLanguage
         
         for segment in quote.segments {
-            let segmentText = Text(segment.text)
-                .font(.custom("TBMCYXT", size: segment.isImportant ? importantFontSize : normalFontSize))
-                .fontWeight(segment.isImportant ? .black : .bold)
-                .foregroundColor(segment.isImportant ? importantTextColor : .black)
+            let segmentText: Text
+            
+            // 根据语言选择不同的字体
+            if language == .english {
+                // 英文使用系统字体
+                segmentText = Text(segment.text)
+                    .font(.system(size: segment.isImportant ? importantFontSize : normalFontSize, weight: segment.isImportant ? .black : .bold))
+                    .foregroundColor(segment.isImportant ? importantTextColor : .black)
+            } else {
+                // 中文使用自定义字体
+                segmentText = Text(segment.text)
+                    .font(.custom("TBMCYXT", size: segment.isImportant ? importantFontSize : normalFontSize))
+                    .fontWeight(segment.isImportant ? .black : .bold)
+                    .foregroundColor(segment.isImportant ? importantTextColor : .black)
+            }
             
             combinedText = combinedText + segmentText
         }

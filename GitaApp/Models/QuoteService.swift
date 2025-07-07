@@ -6,11 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
 
-class QuoteService {
+// 语录服务
+class QuoteService: ObservableObject {
     static let shared = QuoteService()
     
-    private let quotes: [Quote] = [
+    // 语录缓存
+    @Published private var cachedQuotes: [Language: [Quote]] = [:]
+    
+    // fallback语言
+    private let fallbackLanguage = Language.simplifiedChinese
+    
+    // fallback语录（硬编码的中文语录）
+    private let fallbackQuotes: [Quote] = [
         // 我要减肥 (20条示例)
         Quote(text: "去年拍的照片，脸小得不像你。", mode: .weightLoss, number: 1, segments: [
             TextSegment(text: "去年拍的照片，脸小得", isImportant: false),
@@ -517,7 +526,93 @@ class QuoteService {
         ])
     ]
     
-    private init() {}
+    private init() {
+        // 监听语言变化
+        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: Notification.Name("LanguageChanged"), object: nil)
+        loadQuotesForCurrentLanguage()
+    }
+    
+    @objc private func languageChanged() {
+        print("🔄 Language changed notification received")
+        cachedQuotes.removeAll()
+        loadQuotesForCurrentLanguage()
+    }
+    
+    private func loadQuotesForCurrentLanguage() {
+        let language = getCurrentLanguage()
+        print("🌐 Current language: \(language.rawValue)")
+        loadQuotes(for: language)
+    }
+    
+    /// 获取当前语言 - 兼容主App和Widget Extension
+    private func getCurrentLanguage() -> Language {
+        // 直接从UserDefaults读取，避免依赖特定的Manager类
+        let sharedDefaults = UserDefaults(suiteName: AppConfig.appGroupIdentifier) ?? UserDefaults.standard
+        let languageKey = "selectedLanguage"
+        
+        if let savedLanguage = sharedDefaults.string(forKey: languageKey),
+           let language = Language(rawValue: savedLanguage) {
+            print("📱 Loaded saved language: \(language.rawValue)")
+            return language
+        } else {
+            let systemLanguage = Language.from(locale: Locale.current)
+            print("📱 Using system language: \(systemLanguage.rawValue)")
+            return systemLanguage
+        }
+    }
+    
+    private func loadQuotes(for language: Language) {
+        guard cachedQuotes[language] == nil else { 
+            print("✅ Quotes already cached for \(language.rawValue)")
+            return 
+        }
+        
+        print("📚 Loading quotes for \(language.rawValue)")
+        
+        if let quoteData = QuoteLoader.loadQuotes(for: language) {
+            var allQuotes: [Quote] = []
+            
+            // 转换每个模式的语录
+            for mode in Mode.allCases {
+                let modeKey = getModeKey(for: mode)
+                if let localizedQuotes = quoteData.quotes[modeKey] {
+                    let quotes = localizedQuotes.map { $0.toQuote(mode: mode) }
+                    allQuotes.append(contentsOf: quotes)
+                    print("✅ Loaded \(quotes.count) quotes for mode: \(mode.rawValue)")
+                }
+            }
+            
+            print("📊 Total quotes loaded: \(allQuotes.count)")
+            cachedQuotes[language] = allQuotes
+        } else {
+            // 如果加载失败，使用fallback
+            print("⚠️ Failed to load quotes for \(language.rawValue), using fallback")
+            if language != fallbackLanguage {
+                loadQuotes(for: fallbackLanguage)
+                cachedQuotes[language] = cachedQuotes[fallbackLanguage] ?? fallbackQuotes
+            } else {
+                cachedQuotes[language] = fallbackQuotes
+            }
+        }
+    }
+    
+    private func getModeKey(for mode: Mode) -> String {
+        switch mode {
+        case .weightLoss:
+            return "weightLoss"
+        case .getAshore:
+            return "getAshore"
+        case .makeMoney:
+            return "makeMoney"
+        case .goodLuck:
+            return "goodLuck"
+        }
+    }
+    
+    private var quotes: [Quote] {
+        let language = getCurrentLanguage()
+        return cachedQuotes[language] ?? fallbackQuotes
+    }
     
     func getRandomQuote(for mode: Mode? = nil) -> Quote {
         let filteredQuotes: [Quote]
@@ -528,7 +623,7 @@ class QuoteService {
             let selectedMode = SettingsManager.shared.selectedMode
             filteredQuotes = quotes.filter { $0.mode == selectedMode }
         }
-        return filteredQuotes.randomElement() ?? quotes[0]
+        return filteredQuotes.randomElement() ?? fallbackQuotes[0]
     }
     
     func getAllQuotes() -> [Quote] {

@@ -1,0 +1,1872 @@
+{
+  "quotes": {
+    "weightLoss": [
+      {
+        "text": "That photo from last year doesn't even look like you anymore.",
+        "number": 1,
+        "segments": [
+          {
+            "text": "That photo from last year",
+            "isImportant": false
+          },
+          {
+            "text": " doesn't even look like you",
+            "isImportant": true
+          },
+          {
+            "text": " anymore.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You're not quitting sugar, you're quitting on yourself.",
+        "number": 2,
+        "segments": [
+          {
+            "text": "You're not quitting",
+            "isImportant": false
+          },
+          {
+            "text": " sugar",
+            "isImportant": true
+          },
+          {
+            "text": ", you're quitting on",
+            "isImportant": false
+          },
+          {
+            "text": " yourself",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "How many times have you promised to lose weight?",
+        "number": 3,
+        "segments": [
+          {
+            "text": "How many times",
+            "isImportant": true
+          },
+          {
+            "text": " have you promised to lose weight?",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Your jeans didn't shrink, you expanded.",
+        "number": 4,
+        "segments": [
+          {
+            "text": "Your jeans didn't shrink, you",
+            "isImportant": false
+          },
+          {
+            "text": " expanded",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Remember when you swore to get fit? Still waiting.",
+        "number": 5,
+        "segments": [
+          {
+            "text": "Remember when you",
+            "isImportant": false
+          },
+          {
+            "text": " swore",
+            "isImportant": true
+          },
+          {
+            "text": " to get fit? Still",
+            "isImportant": false
+          },
+          {
+            "text": " waiting",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Fitness is about reclaiming control over your life.",
+        "number": 6,
+        "segments": [
+          {
+            "text": "Fitness",
+            "isImportant": true
+          },
+          {
+            "text": " is about",
+            "isImportant": false
+          },
+          {
+            "text": " reclaiming control",
+            "isImportant": true
+          },
+          {
+            "text": " over your life.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Eating whatever you want is the ultimate prison.",
+        "number": 7,
+        "segments": [
+          {
+            "text": "Eating whatever you want",
+            "isImportant": true
+          },
+          {
+            "text": " is the ultimate",
+            "isImportant": false
+          },
+          {
+            "text": " prison",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Being overweight isn't the problem, your denial is.",
+        "number": 8,
+        "segments": [
+          {
+            "text": "Being overweight isn't the problem, your",
+            "isImportant": false
+          },
+          {
+            "text": " denial",
+            "isImportant": true
+          },
+          {
+            "text": " is.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You look great, but your habits don't.",
+        "number": 9,
+        "segments": [
+          {
+            "text": "You look great, but your",
+            "isImportant": false
+          },
+          {
+            "text": " habits don't",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "That beautiful face deserves a healthy body.",
+        "number": 10,
+        "segments": [
+          {
+            "text": "That beautiful",
+            "isImportant": false
+          },
+          {
+            "text": " face",
+            "isImportant": true
+          },
+          {
+            "text": " deserves a",
+            "isImportant": false
+          },
+          {
+            "text": " healthy body",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Getting fit isn't about looking better, it's about feeling powerful.",
+        "number": 11,
+        "segments": [
+          {
+            "text": "Getting fit",
+            "isImportant": true
+          },
+          {
+            "text": " isn't about looking better, it's about feeling",
+            "isImportant": false
+          },
+          {
+            "text": " powerful",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You could be stunning without the filters.",
+        "number": 12,
+        "segments": [
+          {
+            "text": "You could be",
+            "isImportant": false
+          },
+          {
+            "text": " stunning",
+            "isImportant": true
+          },
+          {
+            "text": " without the",
+            "isImportant": false
+          },
+          {
+            "text": " filters",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "One more latte, one step further from your goals.",
+        "number": 13,
+        "segments": [
+          {
+            "text": "One more",
+            "isImportant": true
+          },
+          {
+            "text": " latte, one step",
+            "isImportant": false
+          },
+          {
+            "text": " further",
+            "isImportant": true
+          },
+          {
+            "text": " from your goals.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "The mirror is waiting for you to fall in love with yourself.",
+        "number": 14,
+        "segments": [
+          {
+            "text": "The",
+            "isImportant": false
+          },
+          {
+            "text": " mirror",
+            "isImportant": true
+          },
+          {
+            "text": " is waiting for you to",
+            "isImportant": false
+          },
+          {
+            "text": " fall in love",
+            "isImportant": true
+          },
+          {
+            "text": " with yourself.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Beauty and discipline are best friends, not enemies.",
+        "number": 15,
+        "segments": [
+          {
+            "text": "Beauty",
+            "isImportant": true
+          },
+          {
+            "text": " and",
+            "isImportant": false
+          },
+          {
+            "text": " discipline",
+            "isImportant": true
+          },
+          {
+            "text": " are best friends, not enemies.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "\"Starting tomorrow\" is your weight's favorite excuse.",
+        "number": 16,
+        "segments": [
+          {
+            "text": "\"Starting tomorrow\"",
+            "isImportant": true
+          },
+          {
+            "text": " is your weight's",
+            "isImportant": false
+          },
+          {
+            "text": " favorite excuse",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Calories don't have a return policy.",
+        "number": 17,
+        "segments": [
+          {
+            "text": "Calories",
+            "isImportant": true
+          },
+          {
+            "text": " don't have a",
+            "isImportant": false
+          },
+          {
+            "text": " return policy",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Remember when you could shop anywhere?",
+        "number": 18,
+        "segments": [
+          {
+            "text": "Remember when you could",
+            "isImportant": false
+          },
+          {
+            "text": " shop anywhere",
+            "isImportant": true
+          },
+          {
+            "text": "?",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You stress about your weight while stress eating.",
+        "number": 19,
+        "segments": [
+          {
+            "text": "You",
+            "isImportant": false
+          },
+          {
+            "text": " stress",
+            "isImportant": true
+          },
+          {
+            "text": " about your weight while",
+            "isImportant": false
+          },
+          {
+            "text": " stress eating",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "On this journey, you're too easy on yourself.",
+        "number": 20,
+        "segments": [
+          {
+            "text": "On this journey, you're too",
+            "isImportant": false
+          },
+          {
+            "text": " easy",
+            "isImportant": true
+          },
+          {
+            "text": " on yourself.",
+            "isImportant": false
+          }
+        ]
+      }
+    ],
+    "getAshore": [
+      {
+        "text": "You could ace that exam, but TikTok won't let you.",
+        "number": 1,
+        "segments": [
+          {
+            "text": "You could",
+            "isImportant": false
+          },
+          {
+            "text": " ace that exam",
+            "isImportant": true
+          },
+          {
+            "text": ", but",
+            "isImportant": false
+          },
+          {
+            "text": " TikTok",
+            "isImportant": true
+          },
+          {
+            "text": " won't let you.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Your dream school has been waiting long enough.",
+        "number": 2,
+        "segments": [
+          {
+            "text": "Your",
+            "isImportant": false
+          },
+          {
+            "text": " dream school",
+            "isImportant": true
+          },
+          {
+            "text": " has been",
+            "isImportant": false
+          },
+          {
+            "text": " waiting",
+            "isImportant": true
+          },
+          {
+            "text": " long enough.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Smart enough to memorize memes, not formulas?",
+        "number": 3,
+        "segments": [
+          {
+            "text": "Smart enough to memorize",
+            "isImportant": false
+          },
+          {
+            "text": " memes",
+            "isImportant": true
+          },
+          {
+            "text": ", not",
+            "isImportant": false
+          },
+          {
+            "text": " formulas",
+            "isImportant": true
+          },
+          {
+            "text": "?",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You know every celebrity scandal but not your coursework.",
+        "number": 4,
+        "segments": [
+          {
+            "text": "You know every",
+            "isImportant": false
+          },
+          {
+            "text": " celebrity scandal",
+            "isImportant": true
+          },
+          {
+            "text": " but not your",
+            "isImportant": false
+          },
+          {
+            "text": " coursework",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You're not bad at studying, you're great at avoiding it.",
+        "number": 5,
+        "segments": [
+          {
+            "text": "You're not bad at studying, you're great at",
+            "isImportant": false
+          },
+          {
+            "text": " avoiding it",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Brain: online. Productivity: offline.",
+        "number": 6,
+        "segments": [
+          {
+            "text": "Brain",
+            "isImportant": true
+          },
+          {
+            "text": ": online.",
+            "isImportant": false
+          },
+          {
+            "text": " Productivity",
+            "isImportant": true
+          },
+          {
+            "text": ": offline.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You could use your brilliance, but Netflix is easier.",
+        "number": 7,
+        "segments": [
+          {
+            "text": "You could use your",
+            "isImportant": false
+          },
+          {
+            "text": " brilliance",
+            "isImportant": true
+          },
+          {
+            "text": ", but",
+            "isImportant": false
+          },
+          {
+            "text": " Netflix",
+            "isImportant": true
+          },
+          {
+            "text": " is easier.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Expert at relationship advice, novice at homework.",
+        "number": 8,
+        "segments": [
+          {
+            "text": "Expert at",
+            "isImportant": false
+          },
+          {
+            "text": " relationship advice",
+            "isImportant": true
+          },
+          {
+            "text": ", novice at",
+            "isImportant": false
+          },
+          {
+            "text": " homework",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You're not lacking intelligence, just ambition.",
+        "number": 9,
+        "segments": [
+          {
+            "text": "You're not lacking intelligence, just",
+            "isImportant": false
+          },
+          {
+            "text": " ambition",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Logic genius who fails at basic math.",
+        "number": 10,
+        "segments": [
+          {
+            "text": "Logic genius",
+            "isImportant": true
+          },
+          {
+            "text": " who fails at",
+            "isImportant": false
+          },
+          {
+            "text": " basic math",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You're not lazy, you're just too kind to yourself.",
+        "number": 11,
+        "segments": [
+          {
+            "text": "You're not lazy, you're just too",
+            "isImportant": false
+          },
+          {
+            "text": " kind",
+            "isImportant": true
+          },
+          {
+            "text": " to yourself.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Your mind is bright, your phone is brighter.",
+        "number": 12,
+        "segments": [
+          {
+            "text": "Your",
+            "isImportant": false
+          },
+          {
+            "text": " mind",
+            "isImportant": true
+          },
+          {
+            "text": " is bright, your",
+            "isImportant": false
+          },
+          {
+            "text": " phone",
+            "isImportant": true
+          },
+          {
+            "text": " is brighter.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Your textbooks look brand new for a reason.",
+        "number": 13,
+        "segments": [
+          {
+            "text": "Your",
+            "isImportant": false
+          },
+          {
+            "text": " textbooks",
+            "isImportant": true
+          },
+          {
+            "text": " look",
+            "isImportant": false
+          },
+          {
+            "text": " brand new",
+            "isImportant": true
+          },
+          {
+            "text": " for a reason.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Master of multiple choice: choosing to give up.",
+        "number": 14,
+        "segments": [
+          {
+            "text": "Master of",
+            "isImportant": false
+          },
+          {
+            "text": " multiple choice",
+            "isImportant": true
+          },
+          {
+            "text": ": choosing to",
+            "isImportant": false
+          },
+          {
+            "text": " give up",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You can binge-watch, why not binge-study?",
+        "number": 15,
+        "segments": [
+          {
+            "text": "You can",
+            "isImportant": false
+          },
+          {
+            "text": " binge-watch",
+            "isImportant": true
+          },
+          {
+            "text": ", why not",
+            "isImportant": false
+          },
+          {
+            "text": " binge-study",
+            "isImportant": true
+          },
+          {
+            "text": "?",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Made for the honor roll, settling for the scroll.",
+        "number": 16,
+        "segments": [
+          {
+            "text": "Made for the",
+            "isImportant": false
+          },
+          {
+            "text": " honor roll",
+            "isImportant": true
+          },
+          {
+            "text": ", settling for the",
+            "isImportant": false
+          },
+          {
+            "text": " scroll",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You understand drama better than your curriculum.",
+        "number": 17,
+        "segments": [
+          {
+            "text": "You understand",
+            "isImportant": false
+          },
+          {
+            "text": " drama",
+            "isImportant": true
+          },
+          {
+            "text": " better than your",
+            "isImportant": false
+          },
+          {
+            "text": " curriculum",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Does your talent match your aspirations?",
+        "number": 18,
+        "segments": [
+          {
+            "text": "Does your",
+            "isImportant": false
+          },
+          {
+            "text": " talent",
+            "isImportant": true
+          },
+          {
+            "text": " match your",
+            "isImportant": false
+          },
+          {
+            "text": " aspirations",
+            "isImportant": true
+          },
+          {
+            "text": "?",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You're losing to persistence, not intelligence.",
+        "number": 19,
+        "segments": [
+          {
+            "text": "You're losing to",
+            "isImportant": false
+          },
+          {
+            "text": " persistence",
+            "isImportant": true
+          },
+          {
+            "text": ", not",
+            "isImportant": false
+          },
+          {
+            "text": " intelligence",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Want high scores? First score against yourself.",
+        "number": 20,
+        "segments": [
+          {
+            "text": "Want",
+            "isImportant": false
+          },
+          {
+            "text": " high scores",
+            "isImportant": true
+          },
+          {
+            "text": "? First",
+            "isImportant": false
+          },
+          {
+            "text": " score against",
+            "isImportant": true
+          },
+          {
+            "text": " yourself.",
+            "isImportant": false
+          }
+        ]
+      }
+    ],
+    "makeMoney": [
+      {
+        "text": "Your dreams have a price tag, and excuses won't pay it.",
+        "number": 1,
+        "segments": [
+          {
+            "text": "Your dreams have a",
+            "isImportant": false
+          },
+          {
+            "text": " price tag",
+            "isImportant": true
+          },
+          {
+            "text": ", and",
+            "isImportant": false
+          },
+          {
+            "text": " excuses",
+            "isImportant": true
+          },
+          {
+            "text": " won't pay it.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Making money isn't greed, it's clarity.",
+        "number": 2,
+        "segments": [
+          {
+            "text": "Making money",
+            "isImportant": true
+          },
+          {
+            "text": " isn't greed, it's",
+            "isImportant": false
+          },
+          {
+            "text": " clarity",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "The life I want isn't on sale.",
+        "number": 3,
+        "segments": [
+          {
+            "text": "The",
+            "isImportant": false
+          },
+          {
+            "text": " life I want",
+            "isImportant": true
+          },
+          {
+            "text": " isn't",
+            "isImportant": false
+          },
+          {
+            "text": " on sale",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "I don't have a budget for mediocrity.",
+        "number": 4,
+        "segments": [
+          {
+            "text": "I don't have a budget for",
+            "isImportant": false
+          },
+          {
+            "text": " mediocrity",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "I reject unpaid ambitions.",
+        "number": 5,
+        "segments": [
+          {
+            "text": "I reject",
+            "isImportant": false
+          },
+          {
+            "text": " unpaid ambitions",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Ambition sounds like money hitting your account.",
+        "number": 6,
+        "segments": [
+          {
+            "text": "Ambition",
+            "isImportant": true
+          },
+          {
+            "text": " sounds like",
+            "isImportant": false
+          },
+          {
+            "text": " money hitting",
+            "isImportant": true
+          },
+          {
+            "text": " your account.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Manage your emotions, manage your income.",
+        "number": 7,
+        "segments": [
+          {
+            "text": "Manage your",
+            "isImportant": false
+          },
+          {
+            "text": " emotions",
+            "isImportant": true
+          },
+          {
+            "text": ", manage your",
+            "isImportant": false
+          },
+          {
+            "text": " income",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Getting angry is slower than getting rich.",
+        "number": 8,
+        "segments": [
+          {
+            "text": "Getting angry",
+            "isImportant": true
+          },
+          {
+            "text": " is slower than",
+            "isImportant": false
+          },
+          {
+            "text": " getting rich",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "I know my worth, down to the cent.",
+        "number": 9,
+        "segments": [
+          {
+            "text": "I know my",
+            "isImportant": false
+          },
+          {
+            "text": " worth",
+            "isImportant": true
+          },
+          {
+            "text": ", down to the",
+            "isImportant": false
+          },
+          {
+            "text": " cent",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "I'm not hustling wild, I'm strategically ambitious.",
+        "number": 10,
+        "segments": [
+          {
+            "text": "I'm not hustling wild, I'm",
+            "isImportant": false
+          },
+          {
+            "text": " strategically ambitious",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Money gives me security and options.",
+        "number": 11,
+        "segments": [
+          {
+            "text": "Money",
+            "isImportant": true
+          },
+          {
+            "text": " gives me",
+            "isImportant": false
+          },
+          {
+            "text": " security",
+            "isImportant": true
+          },
+          {
+            "text": " and",
+            "isImportant": false
+          },
+          {
+            "text": " options",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Confidence compounds, net worth follows.",
+        "number": 12,
+        "segments": [
+          {
+            "text": "Confidence",
+            "isImportant": true
+          },
+          {
+            "text": " compounds,",
+            "isImportant": false
+          },
+          {
+            "text": " net worth",
+            "isImportant": true
+          },
+          {
+            "text": " follows.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "I can afford what I want, and live where I dream.",
+        "number": 13,
+        "segments": [
+          {
+            "text": "I can",
+            "isImportant": false
+          },
+          {
+            "text": " afford",
+            "isImportant": true
+          },
+          {
+            "text": " what I want, and",
+            "isImportant": false
+          },
+          {
+            "text": " live",
+            "isImportant": true
+          },
+          {
+            "text": " where I dream.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Calm exterior, portfolio on fire.",
+        "number": 14,
+        "segments": [
+          {
+            "text": "Calm",
+            "isImportant": true
+          },
+          {
+            "text": " exterior,",
+            "isImportant": false
+          },
+          {
+            "text": " portfolio",
+            "isImportant": true
+          },
+          {
+            "text": " on fire.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Work quietly, let success make noise.",
+        "number": 15,
+        "segments": [
+          {
+            "text": "Work",
+            "isImportant": true
+          },
+          {
+            "text": " quietly, let",
+            "isImportant": false
+          },
+          {
+            "text": " success",
+            "isImportant": true
+          },
+          {
+            "text": " make noise.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "I only fall for results.",
+        "number": 16,
+        "segments": [
+          {
+            "text": "I only fall for",
+            "isImportant": false
+          },
+          {
+            "text": " results",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You love overthinking, I love ROI.",
+        "number": 17,
+        "segments": [
+          {
+            "text": "You love",
+            "isImportant": false
+          },
+          {
+            "text": " overthinking",
+            "isImportant": true
+          },
+          {
+            "text": ", I love",
+            "isImportant": false
+          },
+          {
+            "text": " ROI",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Winners don't need to announce victories.",
+        "number": 18,
+        "segments": [
+          {
+            "text": "Winners",
+            "isImportant": true
+          },
+          {
+            "text": " don't need to announce victories.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Soft on the surface, sharp in business.",
+        "number": 19,
+        "segments": [
+          {
+            "text": "Soft",
+            "isImportant": true
+          },
+          {
+            "text": " on the surface,",
+            "isImportant": false
+          },
+          {
+            "text": " sharp",
+            "isImportant": true
+          },
+          {
+            "text": " in business.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "I chase profits, not emotional chaos.",
+        "number": 20,
+        "segments": [
+          {
+            "text": "I chase",
+            "isImportant": false
+          },
+          {
+            "text": " profits",
+            "isImportant": true
+          },
+          {
+            "text": ", not",
+            "isImportant": false
+          },
+          {
+            "text": " emotional chaos",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      }
+    ],
+    "goodLuck": [
+      {
+        "text": "The outcome will be better than you imagined.",
+        "number": 1,
+        "segments": [
+          {
+            "text": "The",
+            "isImportant": false
+          },
+          {
+            "text": " outcome",
+            "isImportant": true
+          },
+          {
+            "text": " will be",
+            "isImportant": false
+          },
+          {
+            "text": " better",
+            "isImportant": true
+          },
+          {
+            "text": " than you imagined.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "The plot twist is approaching quietly.",
+        "number": 2,
+        "segments": [
+          {
+            "text": "The",
+            "isImportant": false
+          },
+          {
+            "text": " plot twist",
+            "isImportant": true
+          },
+          {
+            "text": " is approaching",
+            "isImportant": false
+          },
+          {
+            "text": " quietly",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "What you missed was preparation, what's coming is fortune.",
+        "number": 3,
+        "segments": [
+          {
+            "text": "What you missed was",
+            "isImportant": false
+          },
+          {
+            "text": " preparation",
+            "isImportant": true
+          },
+          {
+            "text": ", what's coming is",
+            "isImportant": false
+          },
+          {
+            "text": " fortune",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "The universe never leaves, it's just temporarily quiet.",
+        "number": 4,
+        "segments": [
+          {
+            "text": "The",
+            "isImportant": false
+          },
+          {
+            "text": " universe",
+            "isImportant": true
+          },
+          {
+            "text": " never leaves, it's just temporarily",
+            "isImportant": false
+          },
+          {
+            "text": " quiet",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "When you release control, luck starts working.",
+        "number": 5,
+        "segments": [
+          {
+            "text": "When you",
+            "isImportant": false
+          },
+          {
+            "text": " release",
+            "isImportant": true
+          },
+          {
+            "text": " control,",
+            "isImportant": false
+          },
+          {
+            "text": " luck",
+            "isImportant": true
+          },
+          {
+            "text": " starts working.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Everything beautiful is accelerating toward you.",
+        "number": 6,
+        "segments": [
+          {
+            "text": "Everything",
+            "isImportant": false
+          },
+          {
+            "text": " beautiful",
+            "isImportant": true
+          },
+          {
+            "text": " is",
+            "isImportant": false
+          },
+          {
+            "text": " accelerating",
+            "isImportant": true
+          },
+          {
+            "text": " toward you.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Your name is being memorized by good fortune.",
+        "number": 7,
+        "segments": [
+          {
+            "text": "Your",
+            "isImportant": false
+          },
+          {
+            "text": " name",
+            "isImportant": true
+          },
+          {
+            "text": " is being memorized by",
+            "isImportant": false
+          },
+          {
+            "text": " good fortune",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Delayed responses are already en route.",
+        "number": 8,
+        "segments": [
+          {
+            "text": "Delayed",
+            "isImportant": false
+          },
+          {
+            "text": " responses",
+            "isImportant": true
+          },
+          {
+            "text": " are already",
+            "isImportant": false
+          },
+          {
+            "text": " en route",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Once you're ready, the gifts will arrive.",
+        "number": 9,
+        "segments": [
+          {
+            "text": "Once you're",
+            "isImportant": false
+          },
+          {
+            "text": " ready",
+            "isImportant": true
+          },
+          {
+            "text": ", the",
+            "isImportant": false
+          },
+          {
+            "text": " gifts",
+            "isImportant": true
+          },
+          {
+            "text": " will arrive.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Destiny is quietly shifting in your favor.",
+        "number": 10,
+        "segments": [
+          {
+            "text": "Destiny",
+            "isImportant": true
+          },
+          {
+            "text": " is quietly",
+            "isImportant": false
+          },
+          {
+            "text": " shifting",
+            "isImportant": true
+          },
+          {
+            "text": " in your favor.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You're becoming someone luck wants to find.",
+        "number": 11,
+        "segments": [
+          {
+            "text": "You're becoming someone",
+            "isImportant": false
+          },
+          {
+            "text": " luck",
+            "isImportant": true
+          },
+          {
+            "text": " wants to find.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Your light will be recognized.",
+        "number": 12,
+        "segments": [
+          {
+            "text": "Your",
+            "isImportant": false
+          },
+          {
+            "text": " light",
+            "isImportant": true
+          },
+          {
+            "text": " will be",
+            "isImportant": false
+          },
+          {
+            "text": " recognized",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Next up: your turn to shine.",
+        "number": 13,
+        "segments": [
+          {
+            "text": "Next up: your",
+            "isImportant": false
+          },
+          {
+            "text": " turn",
+            "isImportant": true
+          },
+          {
+            "text": " to shine.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Don't rush, good things arrive on schedule.",
+        "number": 14,
+        "segments": [
+          {
+            "text": "Don't rush,",
+            "isImportant": false
+          },
+          {
+            "text": " good things",
+            "isImportant": true
+          },
+          {
+            "text": " arrive",
+            "isImportant": false
+          },
+          {
+            "text": " on schedule",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Everything is aligning to your perfect rhythm.",
+        "number": 15,
+        "segments": [
+          {
+            "text": "Everything is aligning to your perfect",
+            "isImportant": false
+          },
+          {
+            "text": " rhythm",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "You think it's the end, but it's the transition.",
+        "number": 16,
+        "segments": [
+          {
+            "text": "You think it's the",
+            "isImportant": false
+          },
+          {
+            "text": " end",
+            "isImportant": true
+          },
+          {
+            "text": ", but it's the",
+            "isImportant": false
+          },
+          {
+            "text": " transition",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "The life you want is also looking for you.",
+        "number": 17,
+        "segments": [
+          {
+            "text": "The",
+            "isImportant": false
+          },
+          {
+            "text": " life you want",
+            "isImportant": true
+          },
+          {
+            "text": " is also",
+            "isImportant": false
+          },
+          {
+            "text": " looking for you",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Every wait will receive its answer.",
+        "number": 18,
+        "segments": [
+          {
+            "text": "Every",
+            "isImportant": false
+          },
+          {
+            "text": " wait",
+            "isImportant": true
+          },
+          {
+            "text": " will receive its",
+            "isImportant": false
+          },
+          {
+            "text": " answer",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "No step is wasted, each one counts.",
+        "number": 19,
+        "segments": [
+          {
+            "text": "No",
+            "isImportant": false
+          },
+          {
+            "text": " step",
+            "isImportant": true
+          },
+          {
+            "text": " is wasted,",
+            "isImportant": false
+          },
+          {
+            "text": " each one",
+            "isImportant": true
+          },
+          {
+            "text": " counts.",
+            "isImportant": false
+          }
+        ]
+      },
+      {
+        "text": "Good luck isn't sudden, it's perfectly timed.",
+        "number": 20,
+        "segments": [
+          {
+            "text": "Good luck",
+            "isImportant": true
+          },
+          {
+            "text": " isn't sudden, it's",
+            "isImportant": false
+          },
+          {
+            "text": " perfectly timed",
+            "isImportant": true
+          },
+          {
+            "text": ".",
+            "isImportant": false
+          }
+        ]
+      }
+    ]
+  }
+}

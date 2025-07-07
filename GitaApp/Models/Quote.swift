@@ -15,7 +15,38 @@ enum Mode: String, CaseIterable, Codable {
     case goodLuck = "我要好运"
     
     var displayName: String {
-        return self.rawValue
+        // 动态获取本地化字符串
+        let key: String
+        switch self {
+        case .weightLoss:
+            key = "mode.weightLoss"
+        case .getAshore:
+            key = "mode.getAshore"
+        case .makeMoney:
+            key = "mode.makeMoney"
+        case .goodLuck:
+            key = "mode.goodLuck"
+        }
+        
+        // 尝试使用当前语言的Bundle
+        if let sharedDefaults = UserDefaults(suiteName: AppConfig.appGroupIdentifier),
+           let languageCode = sharedDefaults.string(forKey: "selectedLanguage"),
+           let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"),
+           let bundle = Bundle(path: path) {
+            return NSLocalizedString(key, bundle: bundle, comment: "")
+        }
+        
+        // 如果没有自定义语言，使用系统语言
+        let currentLocale = Locale.current
+        let languageCode = currentLocale.language.languageCode?.identifier ?? "en"
+        
+        if let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"),
+           let bundle = Bundle(path: path) {
+            return NSLocalizedString(key, bundle: bundle, comment: "")
+        }
+        
+        // 最后使用默认
+        return NSLocalizedString(key, comment: "")
     }
     
     var emoji: String {

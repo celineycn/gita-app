@@ -1,0 +1,829 @@
+{
+  "quotes": {
+    "weightLoss": [
+      {
+        "text": "去年拍的照片，脸小得不像你。",
+        "number": 1,
+        "segments": [
+          {"text": "去年拍的照片，脸小得", "isImportant": false},
+          {"text": "不像你", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你戒的从来不是奶茶，是自律。",
+        "number": 2,
+        "segments": [
+          {"text": "你戒的从来不是", "isImportant": false},
+          {"text": "奶茶", "isImportant": true},
+          {"text": "，是", "isImportant": false},
+          {"text": "自律", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "想瘦这件事，你说过很多遍了。",
+        "number": 3,
+        "segments": [
+          {"text": "想瘦", "isImportant": true},
+          {"text": "这件事，你说过很多遍了。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "那条裤子不是缩水，是你膨胀。",
+        "number": 4,
+        "segments": [
+          {"text": "那条裤子不是缩水，是你", "isImportant": false},
+          {"text": "膨胀", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "那天发誓要瘦，现在胖得更稳。",
+        "number": 5,
+        "segments": [
+          {"text": "那天", "isImportant": false},
+          {"text": "发誓", "isImportant": true},
+          {"text": "要瘦，现在", "isImportant": false},
+          {"text": "胖得更稳", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "减肥，是重新掌控自己的人生。",
+        "number": 6,
+        "segments": [
+          {"text": "减肥", "isImportant": true},
+          {"text": "，是重新", "isImportant": false},
+          {"text": "掌控", "isImportant": true},
+          {"text": "自己的人生。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "想吃就吃，是你最大的不自由。",
+        "number": 7,
+        "segments": [
+          {"text": "想吃就吃", "isImportant": true},
+          {"text": "，是你最大的", "isImportant": false},
+          {"text": "不自由", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "胖不是问题，是你不解决问题。",
+        "number": 8,
+        "segments": [
+          {"text": "胖不是问题，是你", "isImportant": false},
+          {"text": "不解决", "isImportant": true},
+          {"text": "问题。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "长得不差，输在太爱吃。",
+        "number": 9,
+        "segments": [
+          {"text": "长得不差，输在", "isImportant": false},
+          {"text": "太爱吃", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "好看的脸，不该躲在双下巴后。",
+        "number": 10,
+        "segments": [
+          {"text": "好看的", "isImportant": false},
+          {"text": "脸", "isImportant": true},
+          {"text": "，不该躲在", "isImportant": false},
+          {"text": "双下巴", "isImportant": true},
+          {"text": "后。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "瘦下来会更美，不是更好看，是更自信。",
+        "number": 11,
+        "segments": [
+          {"text": "瘦下来", "isImportant": true},
+          {"text": "会更美，不是更好看，是更", "isImportant": false},
+          {"text": "自信", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "明明可以靠脸，非要靠修图。",
+        "number": 12,
+        "segments": [
+          {"text": "明明可以靠", "isImportant": false},
+          {"text": "脸", "isImportant": true},
+          {"text": "，非要靠", "isImportant": false},
+          {"text": "修图", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "奶茶三分糖，体脂百分百。",
+        "number": 13,
+        "segments": [
+          {"text": "奶茶", "isImportant": true},
+          {"text": "三分糖，", "isImportant": false},
+          {"text": "体脂", "isImportant": true},
+          {"text": "百分百。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "镜子里的你，还在等你心动。",
+        "number": 14,
+        "segments": [
+          {"text": "镜子", "isImportant": true},
+          {"text": "里的你，还在等你", "isImportant": false},
+          {"text": "心动", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "美貌与自律，不是对立关系。",
+        "number": 15,
+        "segments": [
+          {"text": "美貌", "isImportant": true},
+          {"text": "与", "isImportant": false},
+          {"text": "自律", "isImportant": true},
+          {"text": "，不是对立关系。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "\"明天开始\"是体重的保护神。",
+        "number": 16,
+        "segments": [
+          {"text": "\"明天开始\"", "isImportant": true},
+          {"text": "是体重的", "isImportant": false},
+          {"text": "保护神", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "热量不会因为你后悔就退货。",
+        "number": 17,
+        "segments": [
+          {"text": "热量", "isImportant": true},
+          {"text": "不会因为你后悔就", "isImportant": false},
+          {"text": "退货", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你还记得你上次瘦的时候吗？",
+        "number": 18,
+        "segments": [
+          {"text": "你还记得你", "isImportant": false},
+          {"text": "上次瘦", "isImportant": true},
+          {"text": "的时候吗？", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你在焦虑胖的同时，吃得真香。",
+        "number": 19,
+        "segments": [
+          {"text": "你在", "isImportant": false},
+          {"text": "焦虑胖", "isImportant": true},
+          {"text": "的同时，", "isImportant": false},
+          {"text": "吃得真香", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "减肥路上，你太容易放过自己。",
+        "number": 20,
+        "segments": [
+          {"text": "减肥路上，你太容易", "isImportant": false},
+          {"text": "放过", "isImportant": true},
+          {"text": "自己。", "isImportant": false}
+        ]
+      }
+    ],
+    "getAshore": [
+      {
+        "text": "明明可以上岸，却在刷短剧。",
+        "number": 1,
+        "segments": [
+          {"text": "明明可以", "isImportant": false},
+          {"text": "上岸", "isImportant": true},
+          {"text": "，却在", "isImportant": false},
+          {"text": "刷短剧", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "第一志愿已经等你很久了。",
+        "number": 2,
+        "segments": [
+          {"text": "第一志愿", "isImportant": true},
+          {"text": "已经", "isImportant": false},
+          {"text": "等你", "isImportant": true},
+          {"text": "很久了。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "脑子聪明，用在背歌词可惜了。",
+        "number": 3,
+        "segments": [
+          {"text": "脑子", "isImportant": true},
+          {"text": "聪明，用在", "isImportant": false},
+          {"text": "背歌词", "isImportant": true},
+          {"text": "可惜了。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "背得了星座，背不下定义？",
+        "number": 4,
+        "segments": [
+          {"text": "背得了", "isImportant": false},
+          {"text": "星座", "isImportant": true},
+          {"text": "，背不下", "isImportant": false},
+          {"text": "定义", "isImportant": true},
+          {"text": "？", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你不是不会写，是太会逃避。",
+        "number": 5,
+        "segments": [
+          {"text": "你不是不会写，是太会", "isImportant": false},
+          {"text": "逃避", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "智商在线，作业下线。",
+        "number": 6,
+        "segments": [
+          {"text": "智商", "isImportant": true},
+          {"text": "在线，", "isImportant": false},
+          {"text": "作业", "isImportant": true},
+          {"text": "下线。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "本来能靠脑袋，非要靠熬夜。",
+        "number": 7,
+        "segments": [
+          {"text": "本来能靠", "isImportant": false},
+          {"text": "脑袋", "isImportant": true},
+          {"text": "，非要靠", "isImportant": false},
+          {"text": "熬夜", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "会分析爱情，却不会写分析题。",
+        "number": 8,
+        "segments": [
+          {"text": "会分析", "isImportant": false},
+          {"text": "爱情", "isImportant": true},
+          {"text": "，却不会写", "isImportant": false},
+          {"text": "分析题", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "脑子不差，差的是野心。",
+        "number": 9,
+        "segments": [
+          {"text": "脑子不差，差的是", "isImportant": false},
+          {"text": "野心", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "明明是逻辑天才，却被数学吊打。",
+        "number": 10,
+        "segments": [
+          {"text": "明明是", "isImportant": false},
+          {"text": "逻辑天才", "isImportant": true},
+          {"text": "，却被", "isImportant": false},
+          {"text": "数学", "isImportant": true},
+          {"text": "吊打。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你不是懒，是对自己太温柔。",
+        "number": 11,
+        "segments": [
+          {"text": "你不是懒，是对自己太", "isImportant": false},
+          {"text": "温柔", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "脑袋挺亮，手机更亮。",
+        "number": 12,
+        "segments": [
+          {"text": "脑袋", "isImportant": true},
+          {"text": "挺亮，", "isImportant": false},
+          {"text": "手机", "isImportant": true},
+          {"text": "更亮。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "书干净得像从没看过。",
+        "number": 13,
+        "segments": [
+          {"text": "书", "isImportant": true},
+          {"text": "干净得像", "isImportant": false},
+          {"text": "从没看过", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你会的是选择题，选了放弃。",
+        "number": 14,
+        "segments": [
+          {"text": "你会的是", "isImportant": false},
+          {"text": "选择题", "isImportant": true},
+          {"text": "，选了", "isImportant": false},
+          {"text": "放弃", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "能熬夜追番，为何不能刷卷？",
+        "number": 15,
+        "segments": [
+          {"text": "能", "isImportant": false},
+          {"text": "熬夜追番", "isImportant": true},
+          {"text": "，为何不能", "isImportant": false},
+          {"text": "刷卷", "isImportant": true},
+          {"text": "？", "isImportant": false}
+        ]
+      },
+      {
+        "text": "本该在考场发光，结果在床上发呆。",
+        "number": 16,
+        "segments": [
+          {"text": "本该在", "isImportant": false},
+          {"text": "考场", "isImportant": true},
+          {"text": "发光，结果在", "isImportant": false},
+          {"text": "床上", "isImportant": true},
+          {"text": "发呆。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你看得懂暗恋，却看不懂课本？",
+        "number": 17,
+        "segments": [
+          {"text": "你看得懂", "isImportant": false},
+          {"text": "暗恋", "isImportant": true},
+          {"text": "，却看不懂", "isImportant": false},
+          {"text": "课本", "isImportant": true},
+          {"text": "？", "isImportant": false}
+        ]
+      },
+      {
+        "text": "才华配得上第一志愿吗？",
+        "number": 18,
+        "segments": [
+          {"text": "才华", "isImportant": true},
+          {"text": "配得上", "isImportant": false},
+          {"text": "第一志愿", "isImportant": true},
+          {"text": "吗？", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你输在坚持，不是能力。",
+        "number": 19,
+        "segments": [
+          {"text": "你输在", "isImportant": false},
+          {"text": "坚持", "isImportant": true},
+          {"text": "，不是", "isImportant": false},
+          {"text": "能力", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "想考高分，先考过自己。",
+        "number": 20,
+        "segments": [
+          {"text": "想", "isImportant": false},
+          {"text": "考高分", "isImportant": true},
+          {"text": "，先", "isImportant": false},
+          {"text": "考过", "isImportant": true},
+          {"text": "自己。", "isImportant": false}
+        ]
+      }
+    ],
+    "makeMoney": [
+      {
+        "text": "想要的太贵，不靠幻想买单。",
+        "number": 1,
+        "segments": [
+          {"text": "想要的", "isImportant": false},
+          {"text": "太贵", "isImportant": true},
+          {"text": "，不靠", "isImportant": false},
+          {"text": "幻想", "isImportant": true},
+          {"text": "买单。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "赚钱不是贪心，是清醒。",
+        "number": 2,
+        "segments": [
+          {"text": "赚钱", "isImportant": true},
+          {"text": "不是贪心，是", "isImportant": false},
+          {"text": "清醒", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "我想要的生活，不便宜。",
+        "number": 3,
+        "segments": [
+          {"text": "我想要的", "isImportant": false},
+          {"text": "生活", "isImportant": true},
+          {"text": "，", "isImportant": false},
+          {"text": "不便宜", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "我没有摆烂的预算。",
+        "number": 4,
+        "segments": [
+          {"text": "我没有", "isImportant": false},
+          {"text": "摆烂", "isImportant": true},
+          {"text": "的预算。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "我拒绝无薪野心。",
+        "number": 5,
+        "segments": [
+          {"text": "我拒绝", "isImportant": false},
+          {"text": "无薪", "isImportant": true},
+          {"text": "野心。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "野心落地的声音，是到账。",
+        "number": 6,
+        "segments": [
+          {"text": "野心", "isImportant": true},
+          {"text": "落地的声音，是", "isImportant": false},
+          {"text": "到账", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "情绪要管理，收入也一样。",
+        "number": 7,
+        "segments": [
+          {"text": "情绪", "isImportant": true},
+          {"text": "要管理，", "isImportant": false},
+          {"text": "收入", "isImportant": true},
+          {"text": "也一样。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "生气不如赚钱快。",
+        "number": 8,
+        "segments": [
+          {"text": "生气", "isImportant": false},
+          {"text": "不如", "isImportant": false},
+          {"text": "赚钱", "isImportant": true},
+          {"text": "快。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "我值几个零，心里有数。",
+        "number": 9,
+        "segments": [
+          {"text": "我值", "isImportant": false},
+          {"text": "几个零", "isImportant": true},
+          {"text": "，", "isImportant": false},
+          {"text": "心里有数", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "我不是野路子，是野心有路子。",
+        "number": 10,
+        "segments": [
+          {"text": "我不是野路子，是", "isImportant": false},
+          {"text": "野心", "isImportant": true},
+          {"text": "有路子。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "钱给我安全感，也给我退路。",
+        "number": 11,
+        "segments": [
+          {"text": "钱", "isImportant": true},
+          {"text": "给我", "isImportant": false},
+          {"text": "安全感", "isImportant": true},
+          {"text": "，也给我", "isImportant": false},
+          {"text": "退路", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "自信靠积累，底气靠存款。",
+        "number": 12,
+        "segments": [
+          {"text": "自信", "isImportant": true},
+          {"text": "靠积累，", "isImportant": false},
+          {"text": "底气", "isImportant": true},
+          {"text": "靠存款。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "穿得起想穿的，住得起想住的。",
+        "number": 13,
+        "segments": [
+          {"text": "穿得起", "isImportant": true},
+          {"text": "想穿的，", "isImportant": false},
+          {"text": "住得起", "isImportant": true},
+          {"text": "想住的。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "外表淡定，账户火热。",
+        "number": 14,
+        "segments": [
+          {"text": "外表", "isImportant": false},
+          {"text": "淡定", "isImportant": true},
+          {"text": "，", "isImportant": false},
+          {"text": "账户", "isImportant": true},
+          {"text": "火热。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "低调做事，默默搞钱。",
+        "number": 15,
+        "segments": [
+          {"text": "低调", "isImportant": true},
+          {"text": "做事，", "isImportant": false},
+          {"text": "默默", "isImportant": true},
+          {"text": "搞钱。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "我只对结果动心。",
+        "number": 16,
+        "segments": [
+          {"text": "我只对", "isImportant": false},
+          {"text": "结果", "isImportant": true},
+          {"text": "动心。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你喜欢内耗，我喜欢回报率。",
+        "number": 17,
+        "segments": [
+          {"text": "你喜欢", "isImportant": false},
+          {"text": "内耗", "isImportant": true},
+          {"text": "，我喜欢", "isImportant": false},
+          {"text": "回报率", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "赢，不需要通知全世界。",
+        "number": 18,
+        "segments": [
+          {"text": "赢", "isImportant": true},
+          {"text": "，不需要通知全世界。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "表面柔软，内里精算。",
+        "number": 19,
+        "segments": [
+          {"text": "表面", "isImportant": false},
+          {"text": "柔软", "isImportant": true},
+          {"text": "，内里", "isImportant": false},
+          {"text": "精算", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "我搞钱，不搞情绪波动。",
+        "number": 20,
+        "segments": [
+          {"text": "我", "isImportant": false},
+          {"text": "搞钱", "isImportant": true},
+          {"text": "，不搞", "isImportant": false},
+          {"text": "情绪波动", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      }
+    ],
+    "goodLuck": [
+      {
+        "text": "结果比你想象中更好。",
+        "number": 1,
+        "segments": [
+          {"text": "结果", "isImportant": true},
+          {"text": "比你想象中", "isImportant": false},
+          {"text": "更好", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "转折，正在悄悄向你靠近。",
+        "number": 2,
+        "segments": [
+          {"text": "转折", "isImportant": true},
+          {"text": "，正在悄悄向你", "isImportant": false},
+          {"text": "靠近", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "错过的是考验，来的是好运。",
+        "number": 3,
+        "segments": [
+          {"text": "错过的是", "isImportant": false},
+          {"text": "考验", "isImportant": true},
+          {"text": "，来的是", "isImportant": false},
+          {"text": "好运", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "宇宙从不缺席，只是暂时沉默。",
+        "number": 4,
+        "segments": [
+          {"text": "宇宙", "isImportant": true},
+          {"text": "从不缺席，只是暂时", "isImportant": false},
+          {"text": "沉默", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "当你放下控制，幸运才开始工作。",
+        "number": 5,
+        "segments": [
+          {"text": "当你", "isImportant": false},
+          {"text": "放下", "isImportant": true},
+          {"text": "控制，", "isImportant": false},
+          {"text": "幸运", "isImportant": true},
+          {"text": "才开始工作。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "所有美好的事物，正在加速奔向你。",
+        "number": 6,
+        "segments": [
+          {"text": "所有", "isImportant": false},
+          {"text": "美好", "isImportant": true},
+          {"text": "的事物，正在", "isImportant": false},
+          {"text": "奔向你", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你的名字，正在被好运记住。",
+        "number": 7,
+        "segments": [
+          {"text": "你的", "isImportant": false},
+          {"text": "名字", "isImportant": true},
+          {"text": "，正在被", "isImportant": false},
+          {"text": "好运", "isImportant": true},
+          {"text": "记住。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "延迟的回应，也在路上了。",
+        "number": 8,
+        "segments": [
+          {"text": "延迟的", "isImportant": false},
+          {"text": "回应", "isImportant": true},
+          {"text": "，也在", "isImportant": false},
+          {"text": "路上", "isImportant": true},
+          {"text": "了。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "等你准备好，礼物就会来。",
+        "number": 9,
+        "segments": [
+          {"text": "等你", "isImportant": false},
+          {"text": "准备好", "isImportant": true},
+          {"text": "，", "isImportant": false},
+          {"text": "礼物", "isImportant": true},
+          {"text": "就会来。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "命运正在悄悄偏向你这一边。",
+        "number": 10,
+        "segments": [
+          {"text": "命运", "isImportant": true},
+          {"text": "正在悄悄", "isImportant": false},
+          {"text": "偏向你", "isImportant": true},
+          {"text": "这一边。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你正在变成值得被好运追上的人。",
+        "number": 11,
+        "segments": [
+          {"text": "你正在变成值得被", "isImportant": false},
+          {"text": "好运", "isImportant": true},
+          {"text": "追上的人。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你的光，会被看见。",
+        "number": 12,
+        "segments": [
+          {"text": "你的", "isImportant": false},
+          {"text": "光", "isImportant": true},
+          {"text": "，会被", "isImportant": false},
+          {"text": "看见", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "接下来，是属于你的回合。",
+        "number": 13,
+        "segments": [
+          {"text": "接下来，是属于你的", "isImportant": false},
+          {"text": "回合", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "别急，好事会按时到来。",
+        "number": 14,
+        "segments": [
+          {"text": "别急，", "isImportant": false},
+          {"text": "好事", "isImportant": true},
+          {"text": "会", "isImportant": false},
+          {"text": "按时到来", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "一切都在酝酿最适合你的节奏。",
+        "number": 15,
+        "segments": [
+          {"text": "一切都在酝酿最适合你的", "isImportant": false},
+          {"text": "节奏", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你以为是结尾，其实是转场。",
+        "number": 16,
+        "segments": [
+          {"text": "你以为是", "isImportant": false},
+          {"text": "结尾", "isImportant": true},
+          {"text": "，其实是", "isImportant": false},
+          {"text": "转场", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "你想要的生活，也在找你。",
+        "number": 17,
+        "segments": [
+          {"text": "你想要的", "isImportant": false},
+          {"text": "生活", "isImportant": true},
+          {"text": "，也在", "isImportant": false},
+          {"text": "找你", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "所有的等待，都会被回应。",
+        "number": 18,
+        "segments": [
+          {"text": "所有的", "isImportant": false},
+          {"text": "等待", "isImportant": true},
+          {"text": "，都会被", "isImportant": false},
+          {"text": "回应", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "没有白走的路，每一步都算数。",
+        "number": 19,
+        "segments": [
+          {"text": "没有白走的", "isImportant": false},
+          {"text": "路", "isImportant": true},
+          {"text": "，", "isImportant": false},
+          {"text": "每一步", "isImportant": true},
+          {"text": "都算数。", "isImportant": false}
+        ]
+      },
+      {
+        "text": "好运不是突然，是刚刚好。",
+        "number": 20,
+        "segments": [
+          {"text": "好运", "isImportant": true},
+          {"text": "不是突然，是", "isImportant": false},
+          {"text": "刚刚好", "isImportant": true},
+          {"text": "。", "isImportant": false}
+        ]
+      }
+    ]
+  }
+} 

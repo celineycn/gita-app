@@ -10,37 +10,46 @@ import WidgetKit
 
 struct ContentView: View {
     @StateObject private var settingsManager = SettingsManager.shared
+    @StateObject private var languageManager = LanguageManager.shared
     
     var body: some View {
         TabView {
             ModeSelectionView()
                 .tabItem {
                     Image(systemName: "slider.horizontal.3")
-                    Text("模式选择")
+                    LocalizedText("tab.mode", comment: "Mode Selection tab title")
                 }
             
             QuoteLibraryView()
                 .tabItem {
                     Image(systemName: "quote.bubble")
-                    Text("语录库")
+                    LocalizedText("tab.quotes", comment: "Quote Library tab title")
+                }
+            
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gearshape")
+                    LocalizedText("tab.settings", comment: "Settings tab title")
                 }
         }
         .environmentObject(settingsManager)
+        .environmentObject(languageManager)
     }
 }
 
 struct ModeSelectionView: View {
     @EnvironmentObject var settingsManager: SettingsManager
+    @EnvironmentObject var languageManager: LanguageManager
     
     var body: some View {
         NavigationView {
             VStack(spacing: 30) {
-                Text("选择你的模式")
+                LocalizedText("mode.selection.title", comment: "Choose your mode")
                     .font(.title)
                     .fontWeight(.bold)
                     .padding(.top, 40)
                 
-                Text("根据你当前的目标，选择最适合的激励模式")
+                LocalizedText("mode.selection.subtitle", comment: "Choose the most suitable motivational mode based on your current goals")
                     .font(.body)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -64,19 +73,30 @@ struct ModeSelectionView: View {
                 Spacer()
                 
                 VStack(spacing: 10) {
-                    Text("当前选择：\(settingsManager.selectedMode.displayName)")
+                    LocalizedFormatText("mode.selection.current %@", settingsManager.selectedMode.displayName, comment: "Current selection: %@")
                         .font(.headline)
                         .foregroundColor(.primary)
                     
-                    Text("Widget将显示该模式下的语录")
+                    LocalizedText("mode.selection.widget.info", comment: "Widget will display quotes for this mode")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
                 .padding(.bottom, 30)
             }
-            .navigationTitle("模式选择")
+            .navigationTitle(Text(getLocalizedString("mode.selection.navigation.title", comment: "Mode Selection")))
             .navigationBarTitleDisplayMode(.inline)
         }
+    }
+    
+    private func getLocalizedString(_ key: String, comment: String) -> String {
+        let languageCode = languageManager.currentLanguage.rawValue
+        
+        if let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"),
+           let bundle = Bundle(path: path) {
+            return NSLocalizedString(key, bundle: bundle, comment: comment)
+        }
+        
+        return NSLocalizedString(key, comment: comment)
     }
 }
 
@@ -116,10 +136,12 @@ struct ModeCard: View {
 
 struct QuoteLibraryView: View {
     @EnvironmentObject var settingsManager: SettingsManager
+    @EnvironmentObject var languageManager: LanguageManager
+    @StateObject private var quoteService = QuoteService.shared
     @State private var selectedQuote: Quote?
     
     private var quotesForCurrentMode: [Quote] {
-        QuoteService.shared.getQuotes(for: settingsManager.selectedMode)
+        quoteService.getQuotes(for: settingsManager.selectedMode)
     }
     
     var body: some View {
@@ -129,18 +151,32 @@ struct QuoteLibraryView: View {
                     selectedQuote = quote
                 }
             }
-            .navigationTitle("\(settingsManager.selectedMode.displayName)语录")
+            .navigationTitle(Text(getLocalizedString("quotes.title", settingsManager.selectedMode.displayName)))
             .navigationBarTitleDisplayMode(.large)
         }
         .sheet(item: $selectedQuote) { quote in
             QuoteDetailView(quote: quote)
         }
     }
+    
+    private func getLocalizedString(_ key: String, _ arg: String) -> String {
+        let languageCode = languageManager.currentLanguage.rawValue
+        
+        if let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"),
+           let bundle = Bundle(path: path) {
+            let format = NSLocalizedString(key, bundle: bundle, comment: "")
+            return String(format: format, arg)
+        }
+        
+        let format = NSLocalizedString(key, comment: "")
+        return String(format: format, arg)
+    }
 }
 
 struct QuoteRow: View {
     let quote: Quote
     let onTap: () -> Void
+    @EnvironmentObject var languageManager: LanguageManager
     
     // 普通文字字号
     private let normalFontSize: CGFloat = 16
@@ -165,12 +201,24 @@ struct QuoteRow: View {
     // 构建富文本
     private var styledText: Text {
         var combinedText = Text("")
+        let language = languageManager.currentLanguage
         
         for segment in quote.segments {
-            let segmentText = Text(segment.text)
-                .font(.system(size: segment.isImportant ? importantFontSize : normalFontSize))
-                .fontWeight(segment.isImportant ? .bold : .regular)
-                .foregroundColor(segment.isImportant ? importantTextColor : .primary)
+            let segmentText: Text
+            
+            // 根据语言选择不同的字体
+            if language == .english {
+                // 英文使用系统字体
+                segmentText = Text(segment.text)
+                    .font(.system(size: segment.isImportant ? importantFontSize : normalFontSize, weight: segment.isImportant ? .bold : .regular))
+                    .foregroundColor(segment.isImportant ? importantTextColor : .primary)
+            } else {
+                // 中文使用系统字体（列表中不使用自定义字体）
+                segmentText = Text(segment.text)
+                    .font(.system(size: segment.isImportant ? importantFontSize : normalFontSize))
+                    .fontWeight(segment.isImportant ? .bold : .regular)
+                    .foregroundColor(segment.isImportant ? importantTextColor : .primary)
+            }
             
             combinedText = combinedText + segmentText
         }

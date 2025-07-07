@@ -78,6 +78,12 @@
 		7205E6FE2E12BE9300A75E07 /* Exceptions for "GitaApp" folder in "GitaWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				AppConfig.swift,
+				Localizations/Localizable.xcstrings,
+				Models/Language.swift,
+				Models/LocalizedQuote.swift,
+				Models/Quote.swift,
+				Models/QuoteService.swift,
 				"TaoBaoMaiCaiTi-Regular.otf",
 			);
 			target = 264461052E0F058A009F6428 /* GitaWidgetExtension */;
@@ -308,6 +314,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 264460CC2E0F056A009F6428;
 			minimizedProjectReferenceProxies = 1;

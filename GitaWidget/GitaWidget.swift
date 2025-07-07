@@ -10,15 +10,24 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), quote: QuoteService.shared.getRandomQuote())
+        let currentMode = SettingsManager.shared.getCurrentMode()
+        return SimpleEntry(date: Date(), quote: WidgetQuoteService.shared.getRandomQuote(for: currentMode))
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), quote: QuoteService.shared.getRandomQuote())
+        // 重新加载语录以确保使用最新语言
+        WidgetQuoteService.shared.reloadQuotes()
+        let currentMode = SettingsManager.shared.getCurrentMode()
+        let entry = SimpleEntry(date: Date(), quote: WidgetQuoteService.shared.getRandomQuote(for: currentMode))
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        // 重新加载语录以确保使用最新语言
+        WidgetQuoteService.shared.reloadQuotes()
+        
+        let currentMode = SettingsManager.shared.getCurrentMode()
+        
         var entries: [SimpleEntry] = []
 
         let currentDate = Date()
@@ -26,7 +35,7 @@ struct Provider: TimelineProvider {
         // 根据当前选择的模式获取语录
         for minuteOffset in stride(from: 0, to: 60, by: 5) {
             let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, quote: QuoteService.shared.getRandomQuote())
+            let entry = SimpleEntry(date: entryDate, quote: WidgetQuoteService.shared.getRandomQuote(for: currentMode))
             entries.append(entry)
         }
 
@@ -44,26 +53,37 @@ struct GitaWidgetEntryView : View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var family
     
+    // 根据语言获取字体大小
     private var quoteFontSize: CGFloat {
+        let language = WidgetLanguageManager.getCurrentLanguageForWidget()
+        let baseSize: CGFloat
+        
         switch family {
         case .systemSmall:
-            return 18
+            baseSize = language == .english ? 14 : 18  // 英文更小
         case .systemMedium:
-            return 22
+            baseSize = language == .english ? 17 : 22  // 英文更小
         default:
-            return 24
+            baseSize = language == .english ? 19 : 24  // 英文更小
         }
+        
+        return baseSize
     }
     
     private var importantQuoteFontSize: CGFloat {
+        let language = WidgetLanguageManager.getCurrentLanguageForWidget()
+        let baseSize: CGFloat
+        
         switch family {
         case .systemSmall:
-            return 22
+            baseSize = language == .english ? 17 : 22  // 英文更小
         case .systemMedium:
-            return 28
+            baseSize = language == .english ? 21 : 28  // 英文更小
         default:
-            return 30
+            baseSize = language == .english ? 24 : 30  // 英文更小
         }
+        
+        return baseSize
     }
     
     private var sourceFontSize: CGFloat {
@@ -89,7 +109,7 @@ struct GitaWidgetEntryView : View {
     }
     
     private var padding: CGFloat {
-        family == .systemSmall ? 8 : 12
+        family == .systemSmall ? 3 : 5
     }
     
     private var leftPadding: CGFloat {
@@ -102,23 +122,25 @@ struct GitaWidgetEntryView : View {
     
     // 竖条高度 - 根据文字内容动态调整
     private var barHeight: CGFloat {
-        // 更准确的行数估算 - 考虑中文字符宽度
+        // 更准确的行数估算 - 根据语言调整字符宽度
+        let language = WidgetLanguageManager.getCurrentLanguageForWidget()
         let textLength = entry.quote.text.count
         let estimatedCharsPerLine: Int
         
         switch family {
         case .systemSmall:
-            estimatedCharsPerLine = 6  // 小widget每行约6个中文字符
+            estimatedCharsPerLine = language == .english ? 18 : 6  // 英文字符更窄
         case .systemMedium:
-            estimatedCharsPerLine = 10 // 中等widget每行约10个中文字符
+            estimatedCharsPerLine = language == .english ? 28 : 10 // 英文字符更窄
         default:
-            estimatedCharsPerLine = 10
+            estimatedCharsPerLine = language == .english ? 28 : 10
         }
         
         let estimatedLines = max(1, (textLength + estimatedCharsPerLine - 1) / estimatedCharsPerLine) // 向上取整
         
         // 根据行数计算竖条高度
-        let lineHeight = quoteFontSize * 1.3  // 增加行高以包含行间距
+        let lineHeightMultiplier = language == .english ? 1.1 : 1.3  // 英文行间距更小
+        let lineHeight = quoteFontSize * lineHeightMultiplier
         let baseHeight = CGFloat(estimatedLines) * lineHeight
         
         // 添加固定的基础高度，确保即使短文字也有合理长度
@@ -152,20 +174,50 @@ struct GitaWidgetEntryView : View {
         }
     }
     
-    // 构建富文本
+    // 构建富文本 - 确保空格不丢失
     private var styledText: Text {
-        var combinedText = Text("")
+        let language = WidgetLanguageManager.getCurrentLanguageForWidget()
+        let segments = entry.quote.segments
         
-        for segment in entry.quote.segments {
-            let segmentText = Text(segment.text)
-                .font(.custom("TBMCYXT", size: segment.isImportant ? importantQuoteFontSize : quoteFontSize))
-                .fontWeight(segment.isImportant ? .black : .heavy)
-                .foregroundColor(segment.isImportant ? importantTextColor : textColor)
+        // 对于英文，先构建完整的AttributedString
+        if language == .english {
+            var attributedString = AttributedString()
             
-            combinedText = combinedText + segmentText
+            for segment in segments {
+                var segmentString = AttributedString(segment.text)
+                
+                // 设置字体
+                segmentString.font = .system(size: segment.isImportant ? importantQuoteFontSize : quoteFontSize, weight: segment.isImportant ? .bold : .medium)
+                
+                // 设置颜色
+                segmentString.foregroundColor = segment.isImportant ? importantTextColor : textColor
+                
+                attributedString.append(segmentString)
+            }
+            
+            return Text(attributedString)
+        } else {
+            // 中文使用原来的方法
+            guard let firstSegment = segments.first else {
+                return Text("")
+            }
+            
+            var combinedText = Text(firstSegment.text)
+                .font(.custom("TBMCYXT", size: firstSegment.isImportant ? importantQuoteFontSize : quoteFontSize))
+                .fontWeight(firstSegment.isImportant ? .black : .heavy)
+                .foregroundColor(firstSegment.isImportant ? importantTextColor : textColor)
+            
+            for i in 1..<segments.count {
+                let segment = segments[i]
+                let segmentText = Text(segment.text)
+                    .font(.custom("TBMCYXT", size: segment.isImportant ? importantQuoteFontSize : quoteFontSize))
+                    .fontWeight(segment.isImportant ? .black : .heavy)
+                    .foregroundColor(segment.isImportant ? importantTextColor : textColor)
+                combinedText = combinedText + segmentText
+            }
+            
+            return combinedText
         }
-        
-        return combinedText
     }
 
     var body: some View {
@@ -197,7 +249,7 @@ struct GitaWidgetEntryView : View {
                         // Quote text with styled segments
                         styledText
                             .multilineTextAlignment(.leading)
-                            .lineSpacing(2)
+                            .lineSpacing(WidgetLanguageManager.getCurrentLanguageForWidget() == .english ? 0 : 2)
                             .lineLimit(nil)
                             .minimumScaleFactor(0.85)
                     }
@@ -227,31 +279,48 @@ struct GitaWidgetEntryView : View {
     
     // 创建分段颜色的日期文本
     private var styledDateText: Text {
+        let language = WidgetLanguageManager.getCurrentLanguageForWidget()
         let calendar = Calendar.current
         let month = calendar.component(.month, from: entry.date)
         let day = calendar.component(.day, from: entry.date)
         
-        let monthText = Text("\(month)")
-            .font(.system(size: dateFontSize))
-            .fontWeight(.bold)
-            .foregroundColor(.primary) // 改为自适应颜色
-        
-        let monthUnit = Text("月")
-            .font(.system(size: dateFontSize))
-            .fontWeight(.bold)
-            .foregroundColor(.primary) // 改为自适应颜色
-        
-        let dayText = Text("\(day)")
-            .font(.system(size: dateFontSize))
-            .fontWeight(.bold)
-            .foregroundColor(.primary) // 改为自适应颜色
-        
-        let dayUnit = Text("日")
-            .font(.system(size: dateFontSize))
-            .fontWeight(.bold)
-            .foregroundColor(.primary) // 改为自适应颜色
-        
-        return monthText + monthUnit + dayText + dayUnit
+        // 根据语言决定日期格式
+        switch language {
+        case .simplifiedChinese:
+            // 中文使用 "X月X日" 格式
+            let monthText = Text("\(month)")
+                .font(.system(size: dateFontSize))
+                .fontWeight(.bold)
+                .foregroundColor(.primary)
+            
+            let monthUnit = Text("月")
+                .font(.system(size: dateFontSize))
+                .fontWeight(.bold)
+                .foregroundColor(.primary)
+            
+            let dayText = Text("\(day)")
+                .font(.system(size: dateFontSize))
+                .fontWeight(.bold)
+                .foregroundColor(.primary)
+            
+            let dayUnit = Text("日")
+                .font(.system(size: dateFontSize))
+                .fontWeight(.bold)
+                .foregroundColor(.primary)
+            
+            return monthText + monthUnit + dayText + dayUnit
+            
+        case .english:
+            // 英文使用标准日期格式
+            let formatter = DateFormatter()
+            formatter.locale = language.locale
+            formatter.dateFormat = "MMM d"
+            
+            return Text(formatter.string(from: entry.date))
+                .font(.system(size: dateFontSize))
+                .fontWeight(.bold)
+                .foregroundColor(.primary)
+        }
     }
 }
 
@@ -262,9 +331,21 @@ struct GitaWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             GitaWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("励志语录")
-        .description("根据你选择的模式显示对应的励志语录")
+        .configurationDisplayName(getLocalizedString("widget.title"))
+        .description(getLocalizedString("widget.description"))
         .supportedFamilies([.systemSmall, .systemMedium])
+    }
+    
+    private func getLocalizedString(_ key: String) -> String {
+        let language = WidgetLanguageManager.getCurrentLanguageForWidget()
+        let languageCode = language.rawValue
+        
+        if let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"),
+           let bundle = Bundle(path: path) {
+            return NSLocalizedString(key, bundle: bundle, comment: "")
+        }
+        
+        return NSLocalizedString(key, comment: "")
     }
 }
 
