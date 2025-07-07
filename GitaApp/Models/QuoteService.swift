@@ -529,11 +529,41 @@ class QuoteService: ObservableObject {
     private init() {
         // 监听语言变化
         NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: Notification.Name("LanguageChanged"), object: nil)
+        
+        // 检查是否在Widget环境中，如果是则清理旧缓存
+        if isRunningInWidget() {
+            checkAndCleanWidgetCache()
+        }
+        
         loadQuotesForCurrentLanguage()
+    }
+    
+    /// 检测是否在Widget环境中运行
+    private func isRunningInWidget() -> Bool {
+        // 通过Bundle identifier来判断
+        let bundleIdentifier = Bundle.main.bundleIdentifier ?? ""
+        return bundleIdentifier.contains("GitaWidget")
+    }
+    
+    /// Widget环境专用：检查并清理旧缓存
+    private func checkAndCleanWidgetCache() {
+        let sharedDefaults = UserDefaults(suiteName: AppConfig.appGroupIdentifier) ?? UserDefaults.standard
+        let currentLanguageKey = sharedDefaults.string(forKey: "selectedLanguage")
+        let widgetCacheKey = "widget_cached_language"
+        let cachedLanguage = sharedDefaults.string(forKey: widgetCacheKey)
+        
+        // 如果语言不匹配，清理缓存
+        if currentLanguageKey != cachedLanguage {
+            print("🔄 Widget cache language mismatch, clearing cache")
+            cachedQuotes.removeAll()
+            sharedDefaults.set(currentLanguageKey, forKey: widgetCacheKey)
+            sharedDefaults.synchronize()
+        }
     }
     
     @objc private func languageChanged() {
         print("🔄 Language changed notification received")
+        // 清理所有缓存，确保重新加载
         cachedQuotes.removeAll()
         loadQuotesForCurrentLanguage()
     }
@@ -541,7 +571,8 @@ class QuoteService: ObservableObject {
     private func loadQuotesForCurrentLanguage() {
         let language = getCurrentLanguage()
         print("🌐 Current language: \(language.rawValue)")
-        loadQuotes(for: language)
+        // 强制重新加载，不检查缓存
+        loadQuotes(for: language, forceReload: true)
     }
     
     /// 获取当前语言 - 兼容主App和Widget Extension
@@ -561,7 +592,13 @@ class QuoteService: ObservableObject {
         }
     }
     
-    private func loadQuotes(for language: Language) {
+    private func loadQuotes(for language: Language, forceReload: Bool = false) {
+        // 如果强制重载，清除该语言的缓存
+        if forceReload {
+            cachedQuotes[language] = nil
+            print("🗑️ Cleared cache for \(language.rawValue)")
+        }
+        
         guard cachedQuotes[language] == nil else { 
             print("✅ Quotes already cached for \(language.rawValue)")
             return 

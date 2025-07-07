@@ -15,17 +15,14 @@ struct Provider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        // 重新加载语录以确保使用最新语言
-        WidgetQuoteService.shared.reloadQuotes()
+        // WidgetQuoteService会自动检测语言变化并重新加载
         let currentMode = SettingsManager.shared.getCurrentMode()
         let entry = SimpleEntry(date: Date(), quote: WidgetQuoteService.shared.getRandomQuote(for: currentMode))
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        // 重新加载语录以确保使用最新语言
-        WidgetQuoteService.shared.reloadQuotes()
-        
+        // WidgetQuoteService会自动检测语言变化并重新加载
         let currentMode = SettingsManager.shared.getCurrentMode()
         
         var entries: [SimpleEntry] = []
