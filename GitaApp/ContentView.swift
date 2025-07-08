@@ -43,17 +43,11 @@ struct ModeSelectionView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 30) {
+            VStack(spacing: 20) {
                 LocalizedText("mode.selection.title", comment: "Choose your mode")
                     .font(.title)
                     .fontWeight(.bold)
                     .padding(.top, 40)
-                
-                LocalizedText("mode.selection.subtitle", comment: "Choose the most suitable motivational mode based on your current goals")
-                    .font(.body)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
                 
                 LazyVGrid(columns: [
                     GridItem(.flexible()),
