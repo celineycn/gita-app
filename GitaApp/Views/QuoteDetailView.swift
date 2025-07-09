@@ -136,9 +136,9 @@ struct QuoteDetailView: View {
                     
                     // Stacked cards effect
                     ZStack {
-                        // 使用屏幕宽度的百分比来计算卡片宽度
+                        // 使用屏幕宽度的百分比来计算卡片宽度，并限制最大宽度
                         let cardWidth = horizontalSizeClass == .regular 
-                            ? min(geometry.size.width * 0.85, 800) 
+                            ? min(geometry.size.width * 0.75, 600) 
                             : min(geometry.size.width - 40, 340)
                         
                         // Bottom card (shadow card)

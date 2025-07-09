@@ -40,46 +40,62 @@ struct ContentView: View {
 struct ModeSelectionView: View {
     @EnvironmentObject var settingsManager: SettingsManager
     @EnvironmentObject var languageManager: LanguageManager
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                LocalizedText("mode.selection.title", comment: "Choose your mode")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.top, 40)
+            GeometryReader { geometry in
+                // 基于屏幕尺寸动态计算列数和间距
+                let screenWidth = geometry.size.width
+                let screenHeight = geometry.size.height
+                let isLandscape = screenWidth > screenHeight
+                // 横屏且宽度超过650时显示4列
+                let shouldShowMultiColumns = isLandscape && screenWidth > 650
+                let columnCount = shouldShowMultiColumns ? 4 : 2
+                // 根据列数调整间距
+                let itemSpacing: CGFloat = shouldShowMultiColumns ? 20 : 20
+                let gridSpacing: CGFloat = shouldShowMultiColumns ? 25 : 20
                 
-                LazyVGrid(columns: [
-                    GridItem(.flexible()),
-                    GridItem(.flexible())
-                ], spacing: 20) {
-                    ForEach(Mode.allCases, id: \.self) { mode in
-                        ModeCard(
-                            mode: mode,
-                            isSelected: settingsManager.selectedMode == mode
-                        ) {
-                            settingsManager.selectedMode = mode
+                VStack {
+                    VStack(spacing: 20) {
+                        LocalizedText("mode.selection.title", comment: "Choose your mode")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.top, shouldShowMultiColumns ? 20 : 40)
+                        
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: itemSpacing), count: columnCount), spacing: gridSpacing) {
+                            ForEach(Mode.allCases, id: \.self) { mode in
+                                ModeCard(
+                                    mode: mode,
+                                    isSelected: settingsManager.selectedMode == mode
+                                ) {
+                                    settingsManager.selectedMode = mode
+                                }
+                            }
                         }
+                        .padding(.horizontal)
+                        
+                        Spacer()
+                        
+                        VStack(spacing: 10) {
+                            LocalizedFormatText("mode.selection.current %@", settingsManager.selectedMode.displayName, comment: "Current selection: %@")
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                            
+                            LocalizedText("mode.selection.widget.info", comment: "Widget will display quotes for this mode")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        .padding(.bottom, shouldShowMultiColumns ? 20 : 30)
                     }
+                    .frame(maxWidth: shouldShowMultiColumns ? 1000 : (screenWidth > 600 ? 600 : .infinity))
+                    .frame(maxWidth: .infinity)
                 }
-                .padding(.horizontal)
-                
-                Spacer()
-                
-                VStack(spacing: 10) {
-                    LocalizedFormatText("mode.selection.current %@", settingsManager.selectedMode.displayName, comment: "Current selection: %@")
-                        .font(.headline)
-                        .foregroundColor(.primary)
-                    
-                    LocalizedText("mode.selection.widget.info", comment: "Widget will display quotes for this mode")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
-                .padding(.bottom, 30)
             }
             .navigationTitle(Text(getLocalizedString("mode.selection.navigation.title", comment: "Mode Selection")))
             .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private func getLocalizedString(_ key: String, comment: String) -> String {
@@ -148,6 +164,7 @@ struct QuoteLibraryView: View {
             .navigationTitle(Text(getLocalizedString("quotes.title", settingsManager.selectedMode.displayName)))
             .navigationBarTitleDisplayMode(.large)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .sheet(item: $selectedQuote) { quote in
             QuoteDetailView(quote: quote)
         }

@@ -66,6 +66,7 @@ struct SettingsView: View {
             .navigationTitle(Text(getLocalizedString("tab.settings")))
             .navigationBarTitleDisplayMode(.large)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private func getLocalizedString(_ key: String) -> String {
